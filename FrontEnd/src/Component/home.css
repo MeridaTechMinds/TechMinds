@@ -1,0 +1,182 @@
+#img{
+    background-image: url(../assest/banner-2.jpg);
+    background-position: center;
+}
+.block-color{
+    color: transparent;
+    background: inherit;
+    -webkit-text-stroke: 1px white;
+}
+.block-color2{
+    color: transparent;
+    background: inherit;
+    -webkit-text-stroke: 1px rgb(6, 5, 5);
+}
+#crsimg{
+    min-height: 600px;
+    /* background-size: contain; */
+    background-position: end;
+    background-image: url(../assest/banner-1.jpg);
+    background-color: rgba(0,0,0,.7);
+    background-size: cover;
+}
+#crsimg2{
+    min-height: 600px;
+
+    /* background-size: contain; */
+    background-image: url(../assest/banner-2.jpg);
+    background-position: end;
+    background-size: cover;
+}
+#crsimg3{
+    min-height: 600px;
+    /* background-size: contain; */
+    background-image: url(../assest/banner-3.jpg);
+    background-size: cover;
+}
+@media (min-width:1040px) {
+    #crsimg ,#crsimg2,#crsimg3{
+        height: 90vh;
+    }
+}
+.indsbg{
+    background-image: url(../assest/industries-bg.jpg);
+}
+.blogbg{
+    background-image: url(../assest/shape-25.png);
+    height: 600px;
+    min-height: fit-content;
+}
+
+#servicetitle{
+    height: 400px;
+    min-height: 300px;
+    background-image: url(../assest/service-title.jpg);
+    background-size: cover;
+    background-position: center;
+
+}
+.icon-three{
+    border-radius: 50px 50px 0px 50px;
+
+}
+.violetclr{
+    background-color: rgb(108,78,167);   
+}
+.one-rounded{
+    border-radius: 50px 0px 0px 0px;
+}
+.bg-imgarrow{
+    background-image: url(../assest/icon-6.png);
+    background-repeat: no-repeat;
+
+}
+.text-clr{
+color: rgb(108,78,167);
+}
+.sans{
+    font-family: sans-serif;
+}
+.lightpink{
+    background-color: rgb(250,237,246);
+}
+.udline:hover{
+    text-decoration: underline;
+}
+.transi{
+    transition: 1.5s;
+}
+.transi:hover{
+    transition: 1.5s;
+}
+.cardhieght{
+    height: 420px;
+}
+.bgbl{
+    background-color: rgb(51,60,74);
+}
+#thewholecard{
+    position: absolute;
+    transform-style: preserve-3d;
+    transition: all 0.55 ease;
+    width: 100%;
+    height: 100%;
+}
+#thewholecard:hover{
+    transform: rotateY(180deg);
+}
+#thefront{
+    position: absolute;
+    backface-visibility: hidden;
+    width: 100%;
+    height: 100%;
+}
+#theback{
+    position: absolute;
+    backface-visibility: hidden;
+    transform: rotateY(180deg);
+    width: 100%;
+    height: 100%;
+}
+#selectdrop{
+    -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+#opchi{
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+}
+#opchi:hover{
+    opacity: 1;
+}
+#opchi>*{
+    transform: translateY(20px);
+    transition: 0.5s;
+}
+#opchi:hover>*{
+    transform: translateY(0px);
+}
+.fontfam{
+     font-family: 'Urbanist', sans-serif;
+}
+.mulish{
+font-family: 'Mulish', sans-serif;
+}
+select option{
+   font-family: 'Mulish',sans-serif;
+   font-weight: 500;
+}
+.pagination{
+    list-style: none;
+    text-decoration: none;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5rem;
+    gap: 10px;
+    margin-top: 5rem;
+}
+.pagination .page-num{
+    padding: 8px 15px;
+    cursor: pointer;
+    border-radius: 3px;
+    font-weight: 400;
+    text-decoration: none;
+    color: blue;
+    font-weight: 200;
+    /* transition: 1s; */
+    border-radius: 20px 20px 0px 20px;
+    /* background-color: rgb(109,40,217); */
+}
+.pagination .page-num:hover{
+    background-color: rgb(175, 33, 175);
+    color: white;
+    transition: 0.8s;
+
+}
+.pagination .active{
+    background-color: rgb(175, 33, 175);
+    color: white;
+}
