@@ -13,6 +13,7 @@ const Catogeries = () => {
     let navigate =useNavigate();
     let {catogery}=useParams();
     let [anime,setanime]=useState("")
+    let recentblogs=JSON.parse(sessionStorage.getItem("recentblog"))
     useEffect(()=>{
         setanime("animate__fadeIn");
         const element = document.querySelector('.durationani');
@@ -49,10 +50,19 @@ const Catogeries = () => {
         <Col lg={7}>
            {show ? 
             datas.map((data)=>{
+                let date=""+data.created_at;
+                  let months=["","January","February","March","April","May","June","July",
+                "August","September","October","November","December"]
+                  let year=date.slice(0,4)
+                  let month=""+(months.slice(date.slice(5,7),date.slice(5,7)+1))
+                  console.log(month);
+                  let dte=date.slice(8,10)
                 return(
                     <div className='border-2 shadow rounded-3xl my-4 p-4'>
            <p className='rounded-s-3xl rounded-t-3xl bg-slate-100 text-clr w-fit p-2 capitalize'><img className='inline mx-3' src={require("../assest/e7b9b29c4fdd4d4ec28699064fe80204.png")} alt="" />
              {data.Category}</p>
+             <p className='fontfam text-[18px] fw-bolder'>On <span className='text-slate-600'>
+                               {month} {dte}, {year}</span> </p>
          <div className='flex'>   
          {/* <p className='h-fit w-fit p-2 px-4 text-3xl flex  justify-content-center align-items-center
           bg-slate-900 text-white rounded-s-3xl rounded-t-3xl m-3'>
@@ -103,25 +113,21 @@ const Catogeries = () => {
                 <div className='bg-slate-100 shadow rounded-s-3xl rounded-t-3xl p-4 mx-auto'>
                 <p className='text-xl text-center fw-semibold my-2'>Popular Post</p>
                 <hr />
-                <div id='post1' className='cursor-pointer my-4 flex gap-2'>
-                    <img className='w-25 h-16 bg-center ' src={require("../assest/news-25.jpg")} alt="" />
-                    <div className='text-violet-700 text-lg w-[200px] mx-auto'> Business 
-                    <p className='text-slate-950 transi text-lg hover:text-violet-600'>
-                        Here are some tips Giving back interested in this year?</p></div>
+                {    //w-25 h-16 try this later
+                    recentblogs.map((rcblog)=>{
+                        return(
+                            <div id='post1' className='cursor-pointer my-4 flex gap-2'>
+                    <img className='w-auto h-16 bg-center '
+                     src={`${rcblog.img}`} alt="" />
+                    <div className='text-violet-700 text-lg w-[200px] mx-auto'> {rcblog.Category} 
+                    <p onClick={()=>navigate(`/blog/${rcblog.slug}`)}
+                    className='text-slate-950 transi text-lg hover:text-violet-600'>
+                       {rcblog.Main_Title}</p></div>
                 </div>
-                <div id='post2' className='cursor-pointer flex gap-2'>
-                    <img className='w-25 h-16 bg-center ' src={require("../assest/news-25.jpg")} alt="" />
-                    <div className='text-violet-700 text-lg w-[200px] mx-auto'> Business 
-                    <p className='text-slate-950 transi text-lg hover:text-violet-600'>
-                        Here are some tips Giving back interested in this year?</p></div>
-                </div>
-                <div id='post3' className='cursor-pointer flex gap-2'>
-                    <img className='w-25 h-16 bg-center ' src={require("../assest/news-25.jpg")} alt="" />
-                    <div className='text-violet-700 text-lg w-[200px] mx-auto'> Business 
-                    <p className='text-slate-950 transi text-lg hover:text-violet-600'>
-                        Here are some tips Giving back interested in this year?</p></div>
-                </div>
-                    
+                        )
+                    })
+                }  
+     
                 </div>
                 {/* Giving Wings */}
                 <div className='p-4 bg-violet-600 rounded-t-3xl my-4 rounded-s-3xl'>

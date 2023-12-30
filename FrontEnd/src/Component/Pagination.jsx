@@ -4,7 +4,6 @@ import React, { useEffect, useState } from 'react'
 import { Col, Image } from 'react-bootstrap';
 import ReactPaginate from 'react-paginate';
 import { useNavigate } from 'react-router';
-import CryptoJS from 'crypto-js';
 const Pagination = (props) => {
     const {data} =props;
     console.log(data);
@@ -17,7 +16,9 @@ const Pagination = (props) => {
         setcurrentItems(data.slice(itemOffset, endOffset));
         setPageCount(Math.ceil(data.length / itemsPerPage));
     },[itemOffset,itemsPerPage,data])
-     
+    // recent blogs
+    let recentdata=data.slice(0,3)
+    sessionStorage.setItem("recentblog",JSON.stringify(recentdata))
     const handlePageClick = (event) => {
       const newOffset = (event.selected * itemsPerPage) % data.length;
       setItemOffset(newOffset);
@@ -33,7 +34,7 @@ const Pagination = (props) => {
                 "August","September","October","November","December"]
                   let year=date.slice(0,4)
                   let month=""+(months.slice(date.slice(5,7),date.slice(5,7)+1))
-                  console.log(month); 
+                  console.log(month);
                   let dte=date.slice(8,10)
                   // const encryptedData = CryptoJS.AES.encrypt(dataToEncrypt, secretKey).toString();
 
@@ -41,7 +42,8 @@ const Pagination = (props) => {
                         <div className="rounded w-[300px] md:w-[350px] mx-auto position-relative transi border-2 p-3 py-3">
                            
                             <p className='rounded-s-3xl rounded-t-3xl bg-slate-100 text-clr w-fit p-2 capitalize'>{item.Category}</p>
-                            <p className='fontfam text-[18px] fw-bolder'>On <span className='text-slate-600'> {month} {dte}, {year}</span> </p>
+                            <p className='fontfam text-[18px] fw-bolder'>On <span className='text-slate-600'>
+                               {month} {dte}, {year}</span> </p>
                             <div className='position-relative'>
                             <Image  className='d-block w-[100%] rounded-s-3xl rounded-t-3xl' 
                              src={item.img} alt='missing'>
