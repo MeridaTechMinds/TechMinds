@@ -16,7 +16,7 @@ const Chooseus = () => {
         <p className='text-center text-violet-700 text-xl fontfam fw-bolder'>
          WHY CHOOSE US</p>
         <p className='text-center md:text-5xl p-3 text-4xl fontfam   fw-bolder text-black'>
-         Reason For Choose Counsolve</p>
+         Reason For Choose Merida</p>
            <article className="p-3 d-flex flex-column flex-lg-row  container">
            {/* Card section 1 */}
            <Row className='d-flex flex-column justify-center align-items-center p-4 '>
