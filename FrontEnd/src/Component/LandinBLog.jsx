@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import { Col, Image, Row } from 'react-bootstrap'
 import Slider from 'react-slick';
-import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import { Link, useNavigate } from 'react-router-dom';
 const LandinBLog = () => {
     let [display,setdisplay]=useState(false)
@@ -146,9 +145,11 @@ const LandinBLog = () => {
             <p>Based on 2,500 Client Reviews</p>
             </p>
            </div>
-           <button className='text-xl transi  hover:text-pink-400'>Read all reviews
-           <KeyboardArrowRightIcon/>
-           </button>
+           {/* <button className='text-xl transi  hover:text-pink-400'>Read all reviews
+           <svg xmlns="http://www.w3.org/2000/svg" fill="none" width="15" height="25" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="">
+  <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+</svg>
+           </button> */}
 
             </Col>
             <Col lg={6} className='my-2'>

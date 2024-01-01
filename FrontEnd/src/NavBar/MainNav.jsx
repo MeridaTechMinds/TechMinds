@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 import { Button, Container, Form, Nav, NavDropdown, Navbar, Offcanvas } from 'react-bootstrap'
 import { Link, useNavigate } from 'react-router-dom';
 import 'animate.css';
-import { KeyboardArrowDown, KeyboardArrowRight } from '@mui/icons-material';
 const MainNav = () => {
   
   const [show, setShow] = useState(false);
@@ -39,27 +38,43 @@ const MainNav = () => {
                 <Nav className="px-5 fw-semibold justify-content-start justify-content-between  flex-grow-1 pe-3">
                   <Nav.Link onClick={()=>{navigate("/");setnav(false) }} className='fontfam text-lg'><button className='fontfam text-lg'>Home</button></Nav.Link>
                   <Nav.Link><div className="drpdown ">
-                  <button className="drpbtn fontfam text-lg">About <KeyboardArrowDown className='d-lg-none '/></button>
+                  <button className="drpbtn fontfam text-lg">About 
+                
+                  <svg width="20" height="25" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor"
+                   class=" inline ms-2 d-lg-none">
+  <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+</svg>
+ </button>
   <div className="drpdown-content xl:bg-slate-50 bg-red-200 text-slate-50 transi">
     <Link to={"/about"} onClick={()=>{navigate("/about");setnav(false) }}
-     className='text-decoration-none fontfam text-lg w-full hover:scale-105  hover:text-violet-600'>
+     className='text-decoration-none fs-6 fontfam text-lg w-full hover:scale-105  hover:text-violet-600'>
       About Company</Link>
     <Link to={"/ourteam"} onClick={()=>{navigate("/ourteam");setnav(false) }}
-     className='text-decoration-none fontfam text-lg hover:scale-105 hover:text-violet-600' >
+     className='text-decoration-none fs-6 fontfam text-lg hover:scale-105 hover:text-violet-600' >
       Our Team </Link>
   </div>
 </div>
 </Nav.Link>
 {/* service start */}
 <Nav.Link><div className="drpdown ">
-   <button className="drpbtn fontfam text-lg">Service <KeyboardArrowDown className='d-lg-none'/></button>
+   <button className="drpbtn fontfam text-lg">Service 
+   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="25" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" 
+   class=" d-lg-none ms-2 inline">
+  <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+</svg></button>
   <div className="drpdown-content2">
     <Nav.Link onClick={()=>{navigate("/service");setnav(false) }} 
     className='text-decoration-none text-slate-600'>Service </Nav.Link>
     <Nav.Link 
     className='text-decoration-none h-fit drpdown3 text-slate-600' >
-      <button className='drpbtn fontfam text-lg d-block text-start w-max'> Traditional Cosulting
-       <KeyboardArrowRight className='d-none d-lg-inline'/><KeyboardArrowDown className='d-inline d-lg-none '/> </button> 
+      <button className='drpbtn fontfam text-lg d-block fs-6 text-start w-max'> Traditional Cosulting
+       <svg xmlns="http://www.w3.org/2000/svg" fill="none" width="15" height="25" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="ms-2 d-none d-lg-inline">
+  <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+</svg> 
+<svg xmlns="http://www.w3.org/2000/svg" width="20" height="25" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" 
+   class=" d-lg-none ms-2 inline">
+  <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+</svg></button> 
        <div className='drpdown-content3 bg-transparent left-44 inline top-0'>
            <div className='lg:ms-10 lg:bg-slate-50 lg:rounded-s-3xl lg:rounded-t-3xl lg:w-[100%]'>
            <Nav.Link 
@@ -77,7 +92,12 @@ const MainNav = () => {
       <Nav.Link 
     className='text-decoration-none h-fit fontfam text-lg drpdown3 text-slate-600' >
       <button className='drpbtn  d-block text-start w-max'> Traditional Cosulting
-       <KeyboardArrowRight className='d-none d-lg-inline'/><KeyboardArrowDown className='d-inline d-lg-none '/> </button> 
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" width="15" height="25" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="ms-2 d-none d-lg-inline">
+  <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+</svg> <svg xmlns="http://www.w3.org/2000/svg" width="20" height="25" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" 
+   class="ms-2 d-lg-none inline ">
+  <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+</svg> </button> 
        <div className='drpdown-content3 bg-transparent left-44 inline top-0'>
            <div className='lg:ms-10 lg:bg-slate-50 lg:rounded-s-3xl lg:rounded-t-3xl lg:w-[100%]'>
            <Nav.Link 
@@ -95,7 +115,12 @@ const MainNav = () => {
       <Nav.Link 
     className='text-decoration-none fontfam text-lg h-fit drpdown3 text-slate-600' >
       <button className='drpbtn  d-block text-start w-max'> Traditional Cosulting
-       <KeyboardArrowRight className='d-none d-lg-inline'/><KeyboardArrowDown className='d-inline d-lg-none '/> </button> 
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" width="15" height="25" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="d-none ms-2 d-lg-inline">
+  <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+</svg> <svg xmlns="http://www.w3.org/2000/svg" width="20" height="25" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" 
+   class="ms-2 d-lg-none inline">
+  <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+</svg> </button> 
        <div className='drpdown-content3 bg-transparent left-44 inline top-0'>
            <div className='lg:ms-10 lg:bg-slate-50 lg:rounded-s-3xl lg:rounded-t-3xl lg:w-[100%]'>
            <Nav.Link 

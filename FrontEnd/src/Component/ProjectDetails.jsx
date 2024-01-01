@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 import { Col, Row } from 'react-bootstrap'
 import TitleBanner from './TitleBanner'
 import { useNavigate, useParams } from 'react-router'
-import { KeyboardArrowRight } from '@mui/icons-material'
 import MiniNav from '../NavBar/MiniNav'
 import LogoNav from '../NavBar/LogoNav'
 import MainNav from '../NavBar/MainNav'
@@ -96,11 +95,23 @@ const ProjectDetails = () => {
         <p className='text-slate-600'>Extremely painful or again is there anyone who loves or case pursues or desires these cases dislike perfectlys imple and to distinguish.</p>
         <p className='text-black'>We keep ourselves up to make your dreams come true,</p>
         <div className='flex flex-wrap'>
-            <p className='text-slate-600 w-1/2 flex'> <KeyboardArrowRight className='text-violet-800'/> <p> Who the Arre you taking Belongs to those who fail.</p> </p>
-            <p className='text-slate-600 w-1/2 flex'> <KeyboardArrowRight className='text-violet-800'/> <p> Who the Arre you taking Belongs to those who fail.</p> </p>
-            <p className='text-slate-600 w-1/2 flex'> <KeyboardArrowRight className='text-violet-800'/> <p> Who the Arre you taking Belongs to those who fail.</p> </p>
-            <p className='text-slate-600 w-1/2 flex'> <KeyboardArrowRight className='text-violet-800'/> <p> Who the Arre you taking Belongs to those who fail.</p> </p>
-            <p className='text-slate-600 w-1/2 flex'> <KeyboardArrowRight className='text-violet-800'/> <p> Who the Arre you taking Belongs to those who fail.</p> </p>
+            <p className='text-slate-600 w-1/2 flex'> 
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" width="15" height="25" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="inline">
+  <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+</svg> <p className='text-slate-600 '> Who the Arre you taking Belongs to those who fail.</p> </p>
+            <p className='text-slate-600 w-1/2 flex'> 
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" width="15" height="25" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="inline">
+  <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+</svg> <p className='text-slate-600 '>  Who the Arre you taking Belongs to those who fail.</p> </p>
+            <p className='text-slate-600 w-1/2 flex'>  <svg xmlns="http://www.w3.org/2000/svg" fill="none" width="15" height="25" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="inline">
+  <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+</svg> <p className='text-slate-600 '>  Who the Arre you taking Belongs to those who fail.</p> </p>
+            <p className='text-slate-600 w-1/2 flex'>  <svg xmlns="http://www.w3.org/2000/svg" fill="none" width="15" height="25" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="inline">
+  <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+</svg> <p className='text-slate-600 '>  Who the Arre you taking Belongs to those who fail.</p> </p>
+            <p className='text-slate-600 w-1/2 flex'>  <svg xmlns="http://www.w3.org/2000/svg" fill="none" width="15" height="25" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="inline">
+  <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+</svg> <p className='text-slate-600 '>  Who the Arre you taking Belongs to those who fail.</p> </p>
 
 
         </div>

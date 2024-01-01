@@ -1,7 +1,6 @@
 import React from 'react'
 import { Col, Container, Row } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
-import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 const ContactLanding = () => {
    let cp= "(OPC) Pvt.Ltd"
   return (
@@ -67,33 +66,45 @@ than 16 Countries
                <hr />
                <div className='text-slate-400'>
                 <Link to={"/"} hrefLang='#home' className='text-decoration-none text-slate-500 transi hover:text-violet-600'>
-                <p className=''>
-                   <KeyboardArrowRightIcon /> Home
+                <p className='flex align-items-center'>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" width="15" height="25" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="">
+  <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+</svg>  Home
                 </p>
                 </Link>
                 <Link to={"/about"} className='text-decoration-none text-slate-500 transi hover:text-violet-600'>
-                <p className=''>
-                   <KeyboardArrowRightIcon /> About us
+                <p className='flex align-items-center'>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" width="15" height="25" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="">
+  <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+</svg> About us
                 </p>
                 </Link>
                 <Link to={"/blogs"} className='text-decoration-none text-slate-500 transi hover:text-violet-600'>
-                <p className=''>
-                   <KeyboardArrowRightIcon /> Grid view
+                <p className='flex align-items-center'>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" width="15" height="25" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="">
+  <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+</svg> Grid view
                 </p>
                 </Link>
                 <Link to={"/service"} className='text-decoration-none text-slate-500 transi hover:text-violet-600'>
-                <p className=''>
-                   <KeyboardArrowRightIcon /> Services
+                <p className='flex align-items-center'>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" width="15" height="25" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="">
+  <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+</svg>  Services
                 </p>
                 </Link>
                 <Link to={"/ourteam"} className='text-decoration-none text-slate-500 transi hover:text-violet-600'>
-                <p className=''>
-                   <KeyboardArrowRightIcon /> Our team
+                <p className='flex align-items-center'>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" width="15" height="25" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="">
+  <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+</svg> Our team
                 </p>
                 </Link>
                 <Link to={"/contact"} className='text-decoration-none text-slate-500 transi hover:text-violet-600'>
-                <p className=''>
-                   <KeyboardArrowRightIcon /> Contact
+                <p className='flex align-items-center'>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" width="15" height="25" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="">
+  <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+</svg>  Contact
                 </p>
                 </Link>
                </div>
@@ -103,33 +114,45 @@ than 16 Countries
                <hr />
                <div className='text-slate-400'>
                 <Link to={"/service/Advanced Tech"} className='text-decoration-none text-slate-500 transi hover:text-violet-600'>
-                <p className=''>
-                   <KeyboardArrowRightIcon /> Advanced Tech
+                <p className='flex align-items-center'>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" width="15" height="25" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="">
+  <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+</svg>  Advanced Tech
                 </p>
                 </Link>
                 <Link to={"/service/Banking and Finance"} className='text-decoration-none text-slate-500 transi hover:text-violet-600'>
-                <p className=''>
-                   <KeyboardArrowRightIcon /> Banking and finance
+                <p className='flex align-items-center'>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" width="15" height="25" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="">
+  <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+</svg>  Banking and finance
                 </p>
                 </Link>
                 <Link to={"/service/Submit reports"} className='text-decoration-none text-slate-500 transi hover:text-violet-600'>
-                <p className=''>
-                   <KeyboardArrowRightIcon /> Submit reports
+                <p className='flex align-items-center'>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" width="15" height="25" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="">
+  <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+</svg>  Submit reports
                 </p>
                 </Link>
                 <Link to={"/service/Independent"} className='text-decoration-none text-slate-500 transi hover:text-violet-600'>
-                <p className=''>
-                   <KeyboardArrowRightIcon /> Independent
+                <p className='flex align-items-center'>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" width="15" height="25" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="">
+  <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+</svg> Independent
                 </p>
                 </Link>
                 <Link to={"/service/Manufacturing"} className='text-decoration-none text-slate-500 transi hover:text-violet-600'>
-                <p className=''>
-                   <KeyboardArrowRightIcon /> Manufacturing
+                <p className='flex align-items-center'>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" width="15" height="25" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="">
+  <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+</svg> Manufacturing
                 </p>
                 </Link>
                 <Link to={"/service/Market Research"} className='text-decoration-none text-slate-500 transi hover:text-violet-600'>
-                <p className=''>
-                   <KeyboardArrowRightIcon /> Market Research
+                <p className='flex align-items-center'>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" width="15" height="25" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="">
+  <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+</svg> Market Research
                 </p>
                 </Link>
                
@@ -155,7 +178,9 @@ than 16 Countries
                </Link>
               </div>
               <Link to={"/blogs"} className=' text-lg text-decoration-none text-slate-800 hover:text-violet-700  fw-semibold'>
-              View all post <KeyboardArrowRightIcon/></Link>
+              View all post <svg xmlns="http://www.w3.org/2000/svg" fill="none" width="15" height="25" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="inline">
+  <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+</svg> </Link>
             </Col>
           </Row>
           

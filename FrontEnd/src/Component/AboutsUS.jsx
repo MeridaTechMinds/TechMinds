@@ -1,4 +1,4 @@
-import { KeyboardArrowRight } from '@mui/icons-material'
+
 import React, { useEffect, useState } from 'react'
 import { Card, Col, Row } from 'react-bootstrap'
 import { useNavigate } from 'react-router'
@@ -13,7 +13,7 @@ import ContactLanding from './ContactLanding'
 
 const AboutsUS = () => {
     let navigate =useNavigate()
-    let [tanime,settanime]=useState("")
+    let [tanime,settanime]=useState("");
       useEffect(()=>{
         settanime("animate__fadeIn");
         const element = document.querySelector('.durationanit');
@@ -189,14 +189,20 @@ const AboutsUS = () => {
                         There are many variations passages of lorem
                          ipsum available, but the ma- jority have suffered.
                         </span>
-                        <span className='text-slate-500 mt-2 fw-normal text-lg sm:w-3/5 block'>
-                            <KeyboardArrowRight className='text-violet-600'/> Tend to repeat predefined
+                        <span className='text-slate-500 mt-2 fw-normal text-lg sm:w-3/5 flex align-items-center'>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" width="20" height="20" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="">
+  <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+</svg> Tend to repeat predefined
                         </span>
-                        <span className='text-slate-500 mt-2 fw-normal text-lg sm:w-3/5 block'>
-                            <KeyboardArrowRight className='text-violet-600'/> Tend to repeat predefined
+                        <span className='text-slate-500 mt-2 fw-normal text-lg sm:w-3/5 flex align-items-center'>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" width="20" height="20" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="">
+  <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+</svg> Tend to repeat predefined
                         </span>
-                        <span className='text-slate-500 mt-2 fw-normal text-lg sm:w-3/5 block'>
-                            <KeyboardArrowRight className='text-violet-600'/> Tend to repeat predefined
+                        <span className='text-slate-500 mt-2 fw-normal text-lg sm:w-3/5 flex align-items-center'>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" width="20" height="20" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="">
+  <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+</svg> Tend to repeat predefined
                         </span>
                         
                         </p>

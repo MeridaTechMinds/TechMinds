@@ -1,5 +1,4 @@
 
-import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
 import React, { useEffect, useState } from 'react'
 import { Col, Image } from 'react-bootstrap';
 import ReactPaginate from 'react-paginate';
@@ -60,7 +59,9 @@ const Pagination = (props) => {
                             <p className='text-3xl fontfam fw-bolder mt-2'>{item.Main_Title}</p>
                             <p onClick={()=>{
                                         navigate(`/blog/${item.slug}`)
-                                    }} className='cursor-pointer hover:text-violet-700 fontfam fw-semibold '>Explore more <KeyboardArrowRight/></p>
+                                    }} className='cursor-pointer hover:text-violet-700 fontfam fw-semibold '>Explore more <svg xmlns="http://www.w3.org/2000/svg" fill="none" width="15" height="25" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="inline">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                  </svg> </p>
                         
                             
                         </div>

@@ -5,20 +5,15 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import LandingPage from './Component/LandingPage';
 import 'animate.css';
 import Service from './Component/Service';
-import ContactLanding from './Component/ContactLanding';
 import Project from './Component/Project';
 import Blogs from './Component/Blogs';
 import Contact from './Component/Contact';
 import AboutsUS from './Component/AboutsUS';
 import BlogDetails from './Component/BlogDetails';
-import MiniNav from './NavBar/MiniNav';
-import LogoNav from './NavBar/LogoNav';
-import MainNav from './NavBar/MainNav';
 import OurTeam from './Component/OurTeam';
 import ProjectDetails from './Component/ProjectDetails';
 import Catogeries from './Component/Catogeries';
 import ServicesDivision from './Component/ServicesDivision';
-import MainNavBar from './Component/MainNavBar';
 const App = () => {
   return (
     <div>

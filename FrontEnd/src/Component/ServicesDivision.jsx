@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router'
 import TitleBanner from './TitleBanner'
-import { KeyboardArrowRight } from '@mui/icons-material'
 import { Col, Image, Row } from 'react-bootstrap'
 import MiniNav from '../NavBar/MiniNav'
 import LogoNav from '../NavBar/LogoNav'

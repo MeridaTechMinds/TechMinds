@@ -2,8 +2,6 @@ import React, { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router'
 import TitleBanner from './TitleBanner'
 import { Col, Image, Row } from 'react-bootstrap'
-import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight'
-import { Business } from '@mui/icons-material'
 import axios from 'axios'
 import MiniNav from '../NavBar/MiniNav'
 import LogoNav from '../NavBar/LogoNav'
@@ -22,7 +20,7 @@ const BlogDetails = () => {
         const element = document.querySelector('.durationani');
         element.style.setProperty('--animate-duration','4s');
         const fetch =()=>{
-            axios.get(`http://192.168.0.122:9000/data/${id}`)
+            axios.get(`http://192.168.0.124:9000/data/${id}`)
         .then((response)=>{
             setblog(response.data);
             setboolean(true);
@@ -78,9 +76,11 @@ const BlogDetails = () => {
                 {
                      poiints.map((data,index)=>{
                         return(
-                <p className='text-slate-600 w-1/2 flex'> 
-                <KeyboardArrowRight className='text-violet-800'/> 
-                <p>{data.point} </p> </p>                          
+                <p className='text-slate-600 w-1/2 flex gap-2'> 
+                 <svg className='mt-1' xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"/>
+</svg>
+                <p className='w-10/12'>{data.point} </p> </p>                          
                         )
                     })
                 }
@@ -123,27 +123,51 @@ const BlogDetails = () => {
                     <hr />
                     <p onClick={()=>{
                         navigate(`/catogery/business`)
-                    }} className="hover:text-violet-600 cursor-pointer"><KeyboardArrowRight/> Business </p>
+                    }} className="hover:text-violet-600 cursor-pointer">
+                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" width="20" height="17" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" 
+                         class="inline">
+  <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+</svg> Business </p>
                     <hr />
                     <p onClick={()=>{
                         navigate(`/catogery/consulting`)
-                    }} className="hover:text-violet-600 cursor-pointer"><KeyboardArrowRight/> Consulting </p>
+                    }} className="hover:text-violet-600 cursor-pointer">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" width="20" height="17" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" 
+                         class="inline">
+  <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+</svg> Consulting </p>
                     <hr />
                     <p onClick={()=>{
                         navigate(`/catogery/financial`)
-                    }} className="hover:text-violet-600 cursor-pointer"><KeyboardArrowRight/> Financial plan </p>
+                    }} className="hover:text-violet-600 cursor-pointer">
+                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" width="20" height="17" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" 
+                         class="inline">
+  <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+</svg>Financial plan </p>
                     <hr />
                     <p onClick={()=>{
                         navigate(`/catogery/innovative`)
-                    }} className="hover:text-violet-600 cursor-pointer"><KeyboardArrowRight/> Innovative </p>
+                    }} className="hover:text-violet-600 cursor-pointer">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" width="20" height="17" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" 
+                         class="inline">
+  <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+</svg> Innovative </p>
                     <hr />
                     <p onClick={()=>{
                         navigate(`/catogery/Investment`)
-                    }} className="hover:text-violet-600 cursor-pointer"><KeyboardArrowRight/> Investment </p>
+                    }} className="hover:text-violet-600 cursor-pointer">
+                       <svg xmlns="http://www.w3.org/2000/svg" fill="none" width="20" height="17" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" 
+                         class="inline">
+  <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+</svg>Investment </p>
                     <hr />
                     <p onClick={()=>{
                         navigate(`/catogery/management`)
-                    }} className="hover:text-violet-600 cursor-pointer"><KeyboardArrowRight/> Management </p>
+                    }} className="hover:text-violet-600 cursor-pointer">
+                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" width="20" height="17" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" 
+                         class="inline">
+  <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+</svg> Management </p>
                 </div>
                 <div className='bg-slate-100 shadow rounded-s-3xl rounded-t-3xl p-4 mx-auto'>
                 <p className='text-xl text-center fw-semibold my-2'>Popular Post</p>

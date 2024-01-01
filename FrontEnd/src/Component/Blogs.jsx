@@ -1,4 +1,3 @@
-import { KeyboardArrowRight } from '@mui/icons-material'
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router'
 import BeliveUs from './BeliveUs'
@@ -23,7 +22,7 @@ const Blogs = () => {
      
       useEffect(()=>{
             const fetch=  ()=>{
-             axios.get("http://192.168.0.122:9000/api/blog/")
+             axios.get("http://192.168.0.124:9000/api/blog/")
              .then((response)=>{
                  console.log(response.data);
                  setblogs(response.data)

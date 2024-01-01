@@ -1,4 +1,3 @@
-import { KeyboardArrowRight } from '@mui/icons-material'
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router'
 import BeliveUs from './BeliveUs'
@@ -118,7 +117,10 @@ const OurTeam = () => {
     </Card>
        </Slider>
 
-      <p className='text-lg transi hover:text-violet-700 text-center cursor-pointer'>View All Members <KeyboardArrowRight/> </p>
+      <p className='text-lg transi hover:text-violet-700 text-center cursor-pointer'>View All Members
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" width="15" height="25" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="inline">
+  <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+</svg> </p>
     </Container>
     <BeliveUs/>
     <ContactLanding/>
