@@ -34,7 +34,6 @@ const Solutions = () => {
     ]
     var settings = {
         dots: true,
-        speed: 500,
         slidesToShow: 4,
         initialSlide: 0,
         infinite: true,

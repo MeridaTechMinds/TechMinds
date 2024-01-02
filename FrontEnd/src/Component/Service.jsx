@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import MiniNav from '../NavBar/MiniNav'
-import { useNavigate } from 'react-router'
 import { Col, Container, Row } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import Slider from 'react-slick'
@@ -12,10 +11,8 @@ import MainNav from '../NavBar/MainNav'
 import LogoNav from '../NavBar/LogoNav'
 import ContactLanding from './ContactLanding'
 const Service = () => {
-    let navigate=useNavigate()
     var settings = {
         dots: true,
-        speed: 500,
         arrows:false,
         slidesToShow: 3,
         initialSlide: 0,
@@ -54,7 +51,6 @@ const Service = () => {
       };
       var twoiconsetting = {
         dots: true,
-        speed: 500,
         arrows:false,
         slidesToShow: 1,
         initialSlide: 0,

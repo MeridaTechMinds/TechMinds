@@ -3,7 +3,6 @@ import { Col, Image, Row } from 'react-bootstrap'
 import Slider from 'react-slick';
 import { Link, useNavigate } from 'react-router-dom';
 const LandinBLog = () => {
-    let [display,setdisplay]=useState(false)
     let navigate=useNavigate()
     var settings = {
         speed: 500,

@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react'
-import { Button, Container, Form, Nav, NavDropdown, Navbar, Offcanvas } from 'react-bootstrap'
+import React, { useState } from 'react'
+import { Container, Form, Nav, Navbar, Offcanvas } from 'react-bootstrap'
 import { Link, useNavigate } from 'react-router-dom';
 import 'animate.css';
 const MainNav = () => {
@@ -177,7 +177,7 @@ const MainNav = () => {
 
             </div>
             <div className='d-flex lg:mx-10 '>
-            <Form className="d-flex">
+            <Form className="d-flex shadow-none">
                   <Form.Control
                     type="search"
                     placeholder="Search"

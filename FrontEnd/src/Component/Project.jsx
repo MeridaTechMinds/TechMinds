@@ -2,7 +2,6 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router'
 import BeliveUs from './BeliveUs'
-import Slider from 'react-slick'
 import { Image } from 'react-bootstrap'
 import ReactPaginate from 'react-paginate'
 import TitleBanner from './TitleBanner'

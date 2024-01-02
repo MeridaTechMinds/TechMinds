@@ -1,7 +1,6 @@
 import React from 'react'
-import { Carousel, Col, Image, Row } from 'react-bootstrap'
+import { Carousel, Image } from 'react-bootstrap'
 import "./home.css"
-import MainNav from '../NavBar/MainNav'
 import { useNavigate } from 'react-router'
 const HomeBanner = () => {
   let navigate=useNavigate()

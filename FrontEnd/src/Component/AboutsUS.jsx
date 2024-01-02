@@ -1,8 +1,7 @@
 
 import React, { useEffect, useState } from 'react'
-import { Card, Col, Row } from 'react-bootstrap'
+import { Col, Row } from 'react-bootstrap'
 import { useNavigate } from 'react-router'
-import OurTeam from './OurTeam'
 import Slider from 'react-slick'
 import BeliveUs from './BeliveUs'
 import TitleBanner from './TitleBanner'
@@ -98,7 +97,7 @@ const AboutsUS = () => {
     let [anime,setanime]=useState("")
     let changecontent=(id)=>{
        content.forEach((cont)=>{
-        if(cont.id==id){
+        if(cont.id===id){
             settitle(cont.title);
             settext(cont.content);
             setpoints(cont.point);
@@ -112,7 +111,6 @@ const AboutsUS = () => {
        })
     }
     var settings = {
-        speed: 500,
         initialSlide: 0,
         infinite: true,
         slidesToShow: 4,

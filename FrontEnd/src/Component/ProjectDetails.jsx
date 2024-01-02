@@ -11,7 +11,6 @@ const ProjectDetails = () => {
     let {name}=useParams()
     let firstlettter =name.charAt(0);
     console.log(firstlettter);
-    let navigate=useNavigate()
     let [anime,setanime]=useState("")
     useEffect(()=>{
         setanime("animate__fadeIn");

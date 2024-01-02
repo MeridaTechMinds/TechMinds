@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from 'react'
-import { Col,  Container,  Row } from 'react-bootstrap'
+import React from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import "./nav.css"
 const MiniNav = () => {

@@ -10,7 +10,6 @@ import MainNav from '../NavBar/MainNav'
 import ContactLanding from './ContactLanding'
 
 const Blogs = () => {
-    let navigate=useNavigate()
     let [anime,setanime]=useState("")
       useEffect(()=>{
         setanime("animate__fadeIn");
@@ -19,18 +18,21 @@ const Blogs = () => {
       },[])
      
       let [webblogs,setblogs]=useState([])
-     
+      let [boolean,setboolean]=useState(false)
       useEffect(()=>{
             const fetch=  ()=>{
              axios.get("http://192.168.0.124:9000/api/blog/")
              .then((response)=>{
                  console.log(response.data);
-                 setblogs(response.data)
+                 setblogs(response.data);
              })
              .catch((err)=>{
                  console.log(err);
              })
+             if(webblogs.length>0){
+              setboolean(true)
             }
+            } 
             fetch()
       },[])
   return (
@@ -41,7 +43,9 @@ const Blogs = () => {
         <TitleBanner data={"Blogs"}/>
         {/* Grid View */}
         <h1 className='h-20'></h1>
-        <Pagination data={webblogs}/>
+         <Pagination data={webblogs}/> 
+        
+        
         {/* Belive us */}
 
        <BeliveUs/>

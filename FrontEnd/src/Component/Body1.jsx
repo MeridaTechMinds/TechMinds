@@ -3,7 +3,7 @@ import React from 'react'
 import 'animate.css';
 import "../NavBar/nav.css";
 import "../Component/home.css";
-import { Card, Carousel, Col, Container, Row } from 'react-bootstrap';
+import { Container} from 'react-bootstrap';
 import { Link, useNavigate } from 'react-router-dom';
 import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css"; 

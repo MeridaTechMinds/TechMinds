@@ -1,6 +1,6 @@
 
 import React, { useEffect, useState } from 'react'
-import { Col, Image } from 'react-bootstrap';
+import { Image } from 'react-bootstrap';
 import ReactPaginate from 'react-paginate';
 import { useNavigate } from 'react-router';
 const Pagination = (props) => {
@@ -32,8 +32,9 @@ const Pagination = (props) => {
                   let months=["","January","February","March","April","May","June","July",
                 "August","September","October","November","December"]
                   let year=date.slice(0,4)
-                  let month=""+(months.slice(date.slice(5,7),date.slice(5,7)+1))
-                  console.log(month);
+                  let month=""+(months.slice(Number(date.slice(5,7)),Number(date.slice(5,7))+1))
+                  console.log(Number(date.slice(5,7))+1);
+
                   let dte=date.slice(8,10)
                   // const encryptedData = CryptoJS.AES.encrypt(dataToEncrypt, secretKey).toString();
 
