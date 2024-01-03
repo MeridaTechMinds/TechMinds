@@ -25,9 +25,9 @@ SECRET_KEY = "django-insecure-2hi6b$^)*3zr**fe432f54om%6tpjlawt%vqd*@q(+xgt)^=7a
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['192.168.0.122']
+ALLOWED_HOSTS = []
 
-# '192.168.0.122'
+# '192.168.0.124'
 # Application definition
 
 INSTALLED_APPS = [
@@ -83,13 +83,22 @@ WSGI_APPLICATION = "Blog_project.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
+# DATABASES = {
+#     "default": {
+#         "ENGINE": "django.db.backends.sqlite3",
+#         "NAME": BASE_DIR / "db.sqlite3",
+#     }
+# }
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'meridatechblogs',
+        'USER': 'MeridaTechMinds',
+        'PASSWORD': 'MeridaTechMinds',
+        'HOST': 'merida-db.cli6i48a63n9.ap-south-1.rds.amazonaws.com',  # Replace with the actual host
+        'PORT': '3306',  # Replace with the actual port
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators

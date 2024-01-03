@@ -190,10 +190,10 @@ than 16 Countries
        <div className='bg-slate-950 mt-5'>
        <Row className='container mx-auto p-3'>
             <Col lg={9} xl={6} className='flex mx-auto flex-col md:flex-row align-items-center gap-3 justify-between'>
-              <a href='#home' className='text-decoration-none text-lg hover:text-white transi text-slate-400'> Terms & conditions
-              </a>
+              <Link to={"/terms&condition"} className='text-decoration-none text-lg hover:text-white transi text-slate-400'> Terms & conditions
+              </Link>
 
-              <Link className='text-decoration-none text-lg hover:text-white transi text-slate-400'> Privacy policy
+              <Link to={"/terms&condition"} className='text-decoration-none text-lg hover:text-white transi text-slate-400'> Privacy policy
               </Link>
               <Link className='text-decoration-none text-lg hover:text-white transi text-slate-400'> Sitemap
               </Link>

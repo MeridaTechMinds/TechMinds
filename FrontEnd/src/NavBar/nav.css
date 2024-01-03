@@ -98,6 +98,7 @@
   }
   .drpdown-content3 a{
     width: fit-content;
+    font-family:'Urbanist', sans-serif;
   }
   
   /* Change color of dropdown links on hover */
@@ -109,7 +110,7 @@
 .drpdown-content2 a:hover,
 .drpdown-content3 a:hover{
   /* background-color: #ddd; */
-  transform: scale(1.04);
+  transform: scale(1.02);
   transition: .6s;
   color: rgb(108,78,167);
   border-radius: 20px 20px 0px 20px;

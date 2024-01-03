@@ -20,7 +20,7 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 from rest_framework.routers import DefaultRouter
-from Blog_app.views import BlogViewSet,PointViewSet,catagory_details,catagory,comments_list
+from Blog_app.views import BlogViewSet,PointViewSet
 
 router = DefaultRouter()
 router.register(r'blog', BlogViewSet)
@@ -29,9 +29,7 @@ router.register(r'points', PointViewSet)
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("api/", include(router.urls)),  # Corrected include statement
-    path("data/<str:slug>",catagory_details ),
-    path("datas/<str:Category>/",catagory ),
-    path("comments",comments_list),
+    path("api/",include('Blog_app.urls')),
+    path("api/", include(router.urls)), 
     
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

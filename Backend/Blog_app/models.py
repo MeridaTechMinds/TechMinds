@@ -11,7 +11,7 @@ class Blog(models.Model):
     Main_Title = models.CharField(max_length=200)
     Sub_Title=models.CharField(max_length=200)
     Category=models.CharField(max_length=100)
-    Heading=models.CharField(max_length=100)
+    Points_Heading=models.CharField(max_length=100)
     Paragraph1 = models.TextField(max_length=1500)
     Paragraph2 = models.TextField(max_length=1500)
     Highlight=models.CharField(max_length=1000,default="Text")
@@ -40,10 +40,30 @@ class Comments(models.Model):
         return self.comment
 
 class contact(models.Model):
-    first_name=models.CharField(max_length=100,blank=True)
+    first_name=models.CharField(max_length=100)
     last_name=models.CharField(max_length=100)
-    company=models.CharField(max_length=100,blank=True)
+    company=models.CharField(max_length=100)
+    phone=models.CharField(max_length=10)
+    email=models.EmailField(max_length=100,default="email")
+    interested_choices=[
+        ('RM', 'MaleRisk Management'),
+        ('TC', 'Traditional Counsuling'),
+        ('PM', 'Portfilio Management'),
+        ('AA', 'Aset Allocation'),
+    ]
+    interested=models.CharField(max_length=500,choices=interested_choices)
+    message=models.TextField(default="comment",blank=True)
+
+
+class Apointment(models.Model):
+    name=models.CharField(max_length=100,blank=True)
     phone=models.CharField(max_length=10,blank=True)
     email=models.EmailField(max_length=100,default="email",blank=True)
-    interested=models.CharField(max_length=500,blank=True)
+    subject_choices=[
+        ('RM', 'MaleRisk Management'),
+        ('TC', 'Traditional Counsuling'),
+        ('PM', 'Portfilio Management'),
+        ('AA', 'Aset Allocation'),
+    ]
+    subjects=models.CharField(max_length=500,choices=subject_choices)
     message=models.TextField(default="comment")

@@ -26,7 +26,7 @@ const Catogeries = () => {
     let [datas,setdatas]=useState([])
     let [show,setshow] =useState(false)
     useEffect(()=>{
-        axios.get(`http://192.168.0.124:9000/datas/${catogery}/`)
+        axios.get(`http://192.168.0.124:9000/api/datas/${catogery}/`)
         .then((response)=>{
             console.log(response.data);
             setdatas(response.data);
@@ -53,8 +53,8 @@ const Catogeries = () => {
                   let months=["","January","February","March","April","May","June","July",
                 "August","September","October","November","December"]
                   let year=date.slice(0,4)
-                  let month=""+(months.slice(date.slice(5,7),date.slice(5,7)+1))
-                  console.log(month);
+                  let month=""+(months.slice(Number(date.slice(5,7)),Number(date.slice(5,7))+1))
+                  console.log(Number(date.slice(5,7))+1);
                   let dte=date.slice(8,10)
                 return(
                     <div className='border-2 shadow rounded-3xl my-4 p-4'>
@@ -62,10 +62,12 @@ const Catogeries = () => {
              {data.Category}</p>
              <p className='fontfam text-[18px] fw-bolder'>On <span className='text-slate-600'>
                                {month} {dte}, {year}</span> </p>
-         <div className='flex'>   
+         <div className=''>   
          {/* <p className='h-fit w-fit p-2 px-4 text-3xl flex  justify-content-center align-items-center
           bg-slate-900 text-white rounded-s-3xl rounded-t-3xl m-3'>
            </p> */}
+           <p className='text-2xl fontfam fw-bolder'
+           >{data.Main_Title} </p>
             <p className='text-slate-600'>
                 {data.Paragraph1}
             </p>
@@ -74,7 +76,7 @@ const Catogeries = () => {
            <Image className='mx-auto' src={data.img}></Image>
        <button onClick={()=>navigate(`/blog/${data.slug}`)}
              className='hover:text-violet-600 flex gap-3 text-xl my-8 transi fw-semibold'>
-                Explore More</button>
+                Explore More  </button>
            </div>
                 )
             }) : 

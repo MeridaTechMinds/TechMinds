@@ -20,7 +20,7 @@ const BlogDetails = () => {
         const element = document.querySelector('.durationani');
         element.style.setProperty('--animate-duration','4s');
         const fetch =()=>{
-            axios.get(`http://192.168.0.124:9000/data/${id}`)
+            axios.get(`http://192.168.0.124:9000/api/data/${id}`)
         .then((response)=>{
             setblog(response.data);
             setboolean(true);
@@ -41,7 +41,8 @@ const BlogDetails = () => {
       let months=["","January","February","March","April","May","June","July",
       "August","September","October","November","December"]
       let year=date.slice(0,4)
-      let month=""+(months.slice(date.slice(5,7),date.slice(5,7)+1))
+      let month=""+(months.slice(Number(date.slice(5,7)),Number(date.slice(5,7))+1))
+      console.log(Number(date.slice(5,7))+1);
       let dte=date.slice(8,10)
   return (
     <div className={`${anime} animate__animated transi durationani`}>

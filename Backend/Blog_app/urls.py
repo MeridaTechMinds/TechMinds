@@ -1,16 +1,15 @@
-# from django.urls import path, include
-# from rest_framework.routers import DefaultRouter
-# from .views import BlogViewSet, Points
-# from django.conf import settings
-# from django.conf.urls.static import static
-# from . import views
+from django.urls import path, include
+from django.conf import settings
+from django.conf.urls.static import static
+from . import views
+from Blog_app.views import catagory_details,catagory,comments_list,contacts_data,apointment_data
 
-# router = DefaultRouter()
-# router.register(r'blogs', BlogViewSet)
-# # router.register(r'tags', TagViewSet)
-
-# urlpatterns = [
-#     path('app/', include(router.urls)),
-# ]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+urlpatterns = [
+    path("data/<str:slug>",catagory_details ),
+    path("datas/<str:Category>/",catagory ),
+    path("comments",comments_list),
+    path("contacts",contacts_data),
+    path("apointments",apointment_data),
+]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 

@@ -23,6 +23,7 @@ const Body1 = () => {
         slidesToScroll: 1,
         autoplay: true,
         speed: 2000,
+        arrows:"false",
         autoplaySpeed: 1500,
         cssEase: "linear",
         responsive: [
@@ -129,11 +130,11 @@ const Body1 = () => {
 
 
         {/* Scroll bar for a cards */}
-       <div className='container p-2  mb-5'>
+       <div className='container p-2 px-5 sm:px-2 mb-5'>
                 
                    <Slider {...settings} className=''> 
-                    {/* //card1 */}
-                   <div className='bg-red-300 transi hover:border hover:border-red-300 rounded-xl'>
+                   
+                   <div id='cardone' className='bg-red-300 transi hover:border hover:border-red-300 rounded-xl'>
                    <div id='top-rounded'className="card cardhieght mt-3 bg-red-300 p-3">
                       <div  className='d-flex m-3'>
                       <div id="three-rounded" className='bg-red-100 w-16 h-16 p-10'>
@@ -166,8 +167,8 @@ efficiency.</p>
                     </div>
                    </div>
 
-                   {/* //card2 */}
-                    <div className='bg-violet-100 transi hover:border hover:border-violet-300 rounded-xl'>
+                
+                    <div id='cardtwo' className='bg-violet-100 transi hover:border hover:border-violet-300 rounded-xl'>
                     <div id='top-rounded' className="card cardhieght mt-3 p-3">
                       <div id='icon' className='d-flex m-3'>
                       <div id="three-rounded" className='bg-violet-100 w-16 h-16 p-10'>
@@ -196,8 +197,8 @@ impression that speaks volumes about your values and vision. </p>
                             </div>
                     </div>
                     </div>
-                    {/* //card3 */}
-                    <div className='bg-green-300 transi hover:border hover:border-green-300 rounded-xl'>
+                 
+                    <div id='cardthree' className='bg-green-300 transi hover:border hover:border-green-300 rounded-xl'>
                     <div id="top-rounded" className="card cardhieght mt-3 p-3">
                       <div id='icon' className='d-flex m-3'>
                       <div id="three-rounded" className='bg-green-100 w-16 h-16 p-10'>
@@ -226,8 +227,8 @@ impression that speaks volumes about your values and vision. </p>
 We offer expert guidance to optimise your software solutions, streamline processes, and enhance overall efficiency.   </p> </div>
                     </div>
                     </div>
-                   {/* //card4 */}
-                    <div className='bg-amber-300 transi hover:border hover:border-amber-300 rounded-xl'>
+                   
+                    <div id='cardfour' className='bg-amber-300 transi hover:border hover:border-amber-300 rounded-xl'>
                     <div id="top-rounded" className="card cardhieght mt-3  p-3">
                     <div id='icon' className='d-flex m-3'>
                       <div id="three-rounded" className='bg-amber-100 w-16 h-16 p-10'>
@@ -256,7 +257,7 @@ We offer expert guidance to optimise your software solutions, streamline process
 We collaborate with you to identify opportunities, overcome challenges, and implement effective strategies.</p> </div>
                     </div>
                     </div>
-                   {/* //Card4 finish */}
+                   
                    
                    </Slider>  
          
@@ -265,7 +266,7 @@ We collaborate with you to identify opportunities, overcome challenges, and impl
 
      {/* Growth page */}
 
-     <div id="" className='md:mt-72  bg-slate-950'>
+     <div id="" className='md:mt-72 rounded px-4 bg-slate-950'>
       <article className='container bgbl rounded-s-3xl position-relative md:bottom-20'>
           <div className='d-flex flex-col md:flex-row'>
               <div  className='p-4  px-5'>
@@ -287,7 +288,7 @@ matters to this principle of selection</p>
                  bg-slate-900'>
       Monthly Growth
       <br /> <p className='mt-2'>
-      $48,560,25    <span className='text-pink-600 ms-5'>+18%</span>
+      $48,560,25    <span className='text-pink-600 sm:ms-5'>+18%</span>
       </p>
        </div>
               </div>
