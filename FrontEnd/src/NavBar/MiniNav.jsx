@@ -1,35 +1,32 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import "./nav.css"
 const MiniNav = () => {
   let navigate=useNavigate()
   return (
-    <section id='home' className={` border-none clr`}>
-           <div className='clr d-flex flex-col justify-content-lg-around  md:flex-row '>
-               <div id="left-side" className='mx-6 mt-3 d-flex justify-center flex-wrap'>
-               <Link onClick={()=>navigate("/blogs")}
+    <section id='home' style={{backgroundColor: "rgb(19,19,60)"}} className={` border-none pe-4`}>
+           <div className=' d-flex flex-col  justify-content-lg-between lg:flex-row '>
+               <div id="left-side" className='mx-6 mt-3 d-none d-sm-flex d-flex justify-center flex-wrap'>
+               <a href='https://skilllearningacademy.com/' target='_blank'
                className='mx-3 d- text-white-50 text-decoration-none'>
-                <p className=' display-3 text-mini  font-thin'>News & Media</p>
-                </Link>
+                <button className='fw-semibold fontfam'>Skill Learing Academy</button>
+                </a>
 
                 <Link onClick={()=>navigate("/ourteam")}
                 className='mx-3 text-white-50 text-decoration-none'>
-                <p className=' display-3 text-mini font-thin'>Investors </p>
+                <button className='fw-semibold fontfam'>HR Consulting </button>
                 </Link>
                 <Link className='mx-3 text-white-50 text-decoration-none'>
-                <p className='display-3 text-mini font-thin'>Downloads </p>
+                <button className='fw-semibold fontfam'>Fortune Trading Academy</button>
                 </Link>
-                <Link onClick={()=>navigate("/contact")}
-                className='mx-3 text-white-50 text-decoration-none'>
-                <p className=' display-3 text-mini font-thin'>Career</p>
-                </Link>
+                
                </div>
 
                {/* right side */}
                <div id="right-side" className='d-flex justify-content-center   flex-wrap mt-3'>
-               <Link className='mx-3 text-white-50 text-decoration-none'>
+               {/* <Link className='mx-3 text-white-50 text-decoration-none'>
                 <p className='display-6 fs-5 fw-semibold text-white'>Social Connect</p>
-                </Link>
+                </Link> */}
                 <Link to="https://www.facebook.com/" target='_blank' className='mx-3 mt-1 text-white-50 text-decoration-none'>
                 <p className='fs-5 text-mini font-thin'>
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">

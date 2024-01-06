@@ -136,7 +136,7 @@ const Body2Landing = () => {
             onMouseEnter={()=>{set1(true) }}
             onMouseLeave={()=>set1(false)}
             >
-          <div id='img-container' className=''>  
+          <div id='img-container' className=' mx-auto'>  
                      <div id='icon' className='d-flex opacity-90 z-2 position-relative top-12 -left-10'>
                       <div id="three-rounded" className='violetclr flex justify-center align-items-center w-24 h-24'>
                        <img width={55} className='' src={require('../assest/coworking.png')} alt="" />
@@ -162,7 +162,7 @@ const Body2Landing = () => {
             onMouseEnter={()=>set2(true)}
             onMouseLeave={()=>set2(false)}
             >
-          <div id='img-container' className=''>  
+          <div id='img-container' className='mx-auto'>  
                      <div id='icon' className='d-flex opacity-90 z-2 position-relative top-12 -left-10'>
                       <div id="three-rounded" className='violetclr flex justify-center align-items-center w-24 h-24'>
                        <img width={55} className='' src={require('../assest/paper.png')} alt="" />
@@ -190,7 +190,7 @@ const Body2Landing = () => {
             }}
             onMouseLeave={()=>set3(false)}
             >
-          <div id='img-container' className=''>  
+          <div id='img-container' className='mx-auto'>  
                      <div id='icon' className='d-flex opacity-90 z-2 position-relative top-12 -left-10'>
                       <div id="three-rounded" className='violetclr flex justify-center align-items-center w-24 h-24'>
                        <img width={55} className='' src={require('../assest/research.png')} alt="" />

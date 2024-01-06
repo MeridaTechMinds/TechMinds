@@ -2,8 +2,30 @@ import React, { useState } from 'react'
 import { Col, Image, Row } from 'react-bootstrap'
 import Slider from 'react-slick';
 import { Link, useNavigate } from 'react-router-dom';
+import axios from 'axios';
 const LandinBLog = () => {
     let navigate=useNavigate()
+    let [name,setname]=useState("")
+    let [subjects,setsubject]=useState("")
+    let [email,setemail]=useState("")
+    let [phone,setphone]=useState("")
+    let [message,setmessage]=useState("")
+    let submithandle=(e)=>{
+      e.preventDefault()
+      let obj={name,subjects,email,phone,message}
+      console.log(obj);
+      // console.log(JSON.parse(obj))
+      console.log((JSON.stringify(obj)));
+      axios.post(`http://65.1.24.6:8000/api/apointments`,obj )
+      .then((response)=>{
+        alert("hellow")
+            console.log(response.data);
+      })
+      .catch((err)=>{
+        alert("error")
+        console.log(err);
+      })
+    }
     var settings = {
         speed: 500,
         initialSlide: 0,
@@ -191,27 +213,27 @@ const LandinBLog = () => {
                   <form  className='bg-white md:w-fit mx-auto mx-sm-0 rounded-s-3xl rounded-tr-3xl p-4 mt-4 mb-2 ' action="">
                      <div className='d-flex flex-col flex-sm-row'>
                      <div className='d-flex flex-col'>
-                          <input required  type="text" className='p-3 text-slate-500 rounded-s-2xl rounded-tr-2xl text-lg m-2 focus:outline-violet-600 ' placeholder='Name *' />
-                          <input required type="email" className='p-3  text-slate-500  rounded-s-2xl rounded-tr-2xl text-lg m-2 focus:outline-violet-600 ' placeholder='Email *' />
-                          <input required type="Phone" className='p-3  text-slate-500  rounded-s-2xl rounded-tr-2xl text-lg m-2 focus:outline-violet-600 ' placeholder='Phone *' />
+                          <input required  type="text" className='p-3 text-slate-500 border-1 border-slate-400 rounded-s-2xl rounded-tr-2xl text-lg m-2 focus:outline-violet-600 '  placeholder='Name *' onChange={(e)=>setname(e.target.value)} value={name} />
+                          <input required type="email" className='p-3  text-slate-500 border-1 border-slate-400 rounded-s-2xl rounded-tr-2xl text-lg m-2 focus:outline-violet-600 ' placeholder='Email *'  onChange={(e)=>setemail(e.target.value)} value={email} />
+                          <input required type="Phone" className='p-3  text-slate-500 border-1 border-slate-400  rounded-s-2xl rounded-tr-2xl text-lg m-2 focus:outline-violet-600 ' placeholder='Phone *'  onChange={(e)=>setphone(e.target.value)} value={phone} />
                       </div>
                       <div className='d-flex flex-col'>
-                        <select name="Subject" id="selectdrop"
-                        className=' p-3 text-slate-500 cursor-pointer  rounded-s-2xl rounded-tr-2xl text-lg m-2 focus:outline-violet-600'>
+                        <select value={subjects} onChange={(e)=>setsubject(e.target.value)} name="Subject" id="selectdrop"
+                        className='border-1 border-slate-400 p-3 text-slate-500 cursor-pointer  rounded-s-2xl rounded-tr-2xl text-lg m-2 focus:outline-violet-600'>
                             <option value="Subject"> Subject</option>
                             <option value="Traditional consulting"> Traditional consulting</option>
                             <option value="Portfolio Management"> Portfolio Management</option>
                             <option value="Asset Allocation">Asset Allocation</option>
 
                         </select>
-                        <textarea name="Message" placeholder='Message'
-                        className='p-3  text-slate-500  rounded-s-2xl rounded-tr-2xl text-lg m-2 focus:outline-violet-600 '
+                        <textarea name="Message" placeholder='Message' value={message}  onChange={(e)=>setmessage(e.target.value)}
+                        className='p-3 border-1 border-slate-400  text-slate-500  rounded-s-2xl rounded-tr-2xl text-lg m-2 focus:outline-violet-600 '
                          id="" cols="20" rows="5">
 
                         </textarea>
                       </div>
                      </div>
-                     <button id='three-rounded' 
+                     <button id='three-rounded' onClick={submithandle} 
                      className='px-4 text-white w-100 mt-3 btn-change fw-semibold p-3 bg-violet-700'>
                       Send Request
                         </button>
@@ -231,7 +253,7 @@ const LandinBLog = () => {
                  </div>
                  <div className='text-white'>
                  <p className=''>Email </p>
-                 <Link className='text-white text-decoration-none'><p className='hover:underline fw-semibold text-lg font-sans'>info@gmail.com</p>
+                 <Link target='_black' to={"https://mail.google.com/mail/u/0/#sent?compose=CllgCJvnJjjHVjvnBMkwHvqglQHbmZNMmkFhnkQfszxsDsRXqhlJphqQmDVHdHHfGdwrlBFnwCg"} className='text-white text-decoration-none'><p className='hover:underline fw-semibold text-lg font-sans'>dmmanager@meridatechminds.com</p>
                  </Link>
                  <div className='d-flex w-44 justify-around mt-4'>
                       <Link>

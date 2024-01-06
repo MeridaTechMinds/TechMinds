@@ -6,34 +6,17 @@ import MiniNav from '../NavBar/MiniNav'
 import LogoNav from '../NavBar/LogoNav'
 import MainNav from '../NavBar/MainNav'
 import ContactLanding from './ContactLanding'
+import { contents } from './ServiceContent'
 
 const ServicesDivision = () => {
     let {service} =useParams()
     let navigate=useNavigate()
+    let [servicecontent,setcontent]=useState({})
     let [anime,setanime]=useState("")
-    let cards =[
-      {
-        "id":"01",
-        "title":"Investment Policy Statements",
-        "para":"Prevents our being able to do what welike best,every circumstances less owing to the claims."
-      },
-      {
-        "id":"02",
-        "title":"Spending & Distribution Policies",
-        "para":"Undertakes laborious physical except to obtain some advantage from it right to find fault."
-      },
-      {
-        "id":"03",
-        "title":"Asset Allocation",
-        "para":"Cases are perfectly simple and easy to distinguish. In a free hour, when all choice is untrammelled hold."
-      },
-      {
-        "id":"04",
-        "title":"Portfolio Rebalancing",
-        "para":"Take a trivial example, which of ever undertakes laborious physical obtain some advantages."
-      }
-
-    ]
+    let [cards,setcards]=useState([])
+    let [points,setpoints]=useState([])
+    // console.log(contents);
+    
     useEffect(()=>{
       setanime("animate__fadeIn");
       const element = document.querySelector('.durationani');
@@ -41,7 +24,18 @@ const ServicesDivision = () => {
      setTimeout(() => {
         setanime("")
      }, 2000);
-    },[service])
+     let find=()=>{
+      contents.map((content)=>{
+        if(content.title.toLowerCase()===service.toLowerCase()){
+          setcontent(content)
+          setcards(content.points1)
+          setpoints(content.points2)
+        } })
+    }
+    if (service && contents.length > 0) {
+      find();
+    }
+    },[service,contents])
   return (
     <div className={`${anime} animate__animated transi durationani`}>
       <MiniNav/>
@@ -50,23 +44,19 @@ const ServicesDivision = () => {
         <TitleBanner data={service}/>
         <h2 className='h-20'></h2>
         <Row className='container justify-around mx-auto mb-20'>
-            <Col lg={7}>
-            
-            <img src={require("../assest/news-25.jpg")} alt="" />
+            <Col lg={7}>            
+            <img className='rounded-3xl' src={require("../assest/MailMarketing.jpg")} alt="" />
             <p className='text-black mt-10'>" Extremely painful or again is there anyone who loves or case pursues or 
             desires these cases dislike perfectlys imple and to distinguish..... "</p>
-           <p className='text-slate-600'>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt soluta nobis nihil accusamus! Deserunt consequatur eligendi porro totam! A error quis 
-                eveniet quisquam rerum, deserunt doloremque voluptas? Iure, ex dicta? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magni iste molestiae placeat suscipit ratione eaque vel alias,
-                 praesentium soluta maiores eos, nam incidunt quos facilis nihil rerum, veritatis quas eius!
-            </p>
+            <h1 className='fontfam fw-bold fs-3'>{servicecontent.title} </h1>
+           <p className='text-slate-600'>{servicecontent.para1} </p>
             {/* Card */}
-            <div className=' flex flex-wrap my-5 justify-around gap-3'>
+            <div className=' flex flex-wrap my-5 justify-between gap-3'>
               {
-                cards.map((card)=>{
+               cards.map((card)=>{
                   return(
-<div  className='p-5 px-4 rounded-t-3xl rounded-s-3xl bg-slate-100'
-                                  style={{ width: '18rem',
+<div  className='p-5 px-4 w-[25rem] md:w-[20rem] lg:w-[15rem] mx-auto xl:w-[22rem] rounded-t-3xl rounded-s-3xl bg-slate-100'
+                                  style={{
                                   borderRadius : "20px,20px, 20px,0px",
                                    }}>
         <div id='three-rounded' className='w-14 float-right h-14 flex
@@ -75,11 +65,11 @@ const ServicesDivision = () => {
             </div>
             <img className='w-10 h-10' src={require("../assest/zigzag.png")} alt="" />
             
-        <div className='my-4 fw-semibold text-2xl text-start w-4/5'>
+        <div className='my-4 fontfam fw-semibold text-2xl text-start w-4/5'>
            {card.title}
         </div>
       
-        <div className=' text-start xl:w-10/12'> {card.para}
+        <div className='mulish text-start'> {card.point}
         </div>
       </div>
                   )
@@ -90,73 +80,75 @@ const ServicesDivision = () => {
             
             
            {/* Card end */}
-               <p className='text-black fw-semibold text-3xl'>Performance Reporting</p>
-               <p className='text-lg'>Extremely painful or again is there anyone who loves or case pursues,</p>
-               <div className='flex'>
-                        <img className='w-8 h-8' src={require("../assest/check-mark.png")} alt="" />
-                        <p className='ms-4 text-xl fw-semibold flex flex-col text-slate-900'>Financial Planning for Excutives:
-                        <span className='text-slate-500 text-base my-2 fw-normal sm:w-3/5 block'>
-                        Fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that.
-                        </span>
-                        </p>
+               <h2 className='text-black fontfam fw-semibold text-3xl'>
+                {servicecontent.approch}</h2>
+               <p className='text-lg mulish'> {servicecontent.para2}</p>
+               {
+                points.map((point)=>{
+                  return(
+                    <div className='flex my-2'>
+                    <img className='w-8 h-8' src={require("../assest/check-mark.png")} alt="" />
+                    <div className='ms-4 flex flex-col text-slate-900'>
+                    <h2 className=' text-xl fw-semibold'>{point.title}</h2>
+                    <span className='text-slate-500 text-base my-2 fw-normal sm:w-3/5 block'>
+                    {point.point}
+                    </span>
                     </div>
-                    <div className='flex'>
-                        <img className='w-8 h-8' src={require("../assest/check-mark.png")} alt="" />
-                        <p className='ms-4 text-xl fw-semibold flex flex-col text-slate-900'>Tax Planning & Preparation:
-                        <span className='text-slate-500 text-base my-2 fw-normal sm:w-3/5 block'>
-                        Expound the actual teachings of the great explorer of the truth, the master-builder of human happiness or avoids pleasure itself,.
-                        </span>
-                        </p>
-                    </div>
-            </Col>   
+                </div>
+                  )
+                })
+               }
+                   
+            </Col>
+
             <Col lg={4} className='mx-auto mt-5'>
                 <div className='bg-slate-100 trnasi fw-semibold transi shadow my-4 rounded-s-3xl rounded-t-3xl p-4 mx-auto'>
-                    <p onClick={()=>navigate(`/service/Traditional Consulting`)} 
+                    <p onClick={()=>navigate(`/service/Lead Generation`)} 
                     className="hover:text-slate-100 transi hover:bg-violet-600 cursor-pointer rounded-s-3xl rounded-t-3xl bg-slate-50 p-3">
-                       Traditional Consulting
+                       Lead Generation
                        </p>
-                       <p onClick={()=>navigate(`/service/Financial plan`)} 
+                       <p onClick={()=>navigate(`/service/Search Engine Optimization`)} 
                     className="hover:text-slate-100 transi hover:bg-violet-600 cursor-pointer rounded-s-3xl rounded-t-3xl bg-slate-50 p-3">
-                       Financial plan
+                       Search Engine Optimization
                        </p>
-                       <p onClick={()=>navigate(`/service/Consulting`)} 
+                       <p onClick={()=>navigate(`/service/Profile Maintenance`)} 
                     className="hover:text-slate-100 transi hover:bg-violet-600 cursor-pointer rounded-s-3xl rounded-t-3xl bg-slate-50 p-3">
-                      Consulting
+                      Profile Maintenance
                        </p>
-                       <p onClick={()=>navigate(`/service/Management`)} 
+                       <p onClick={()=>navigate(`/service/Affiliate Marketing`)} 
                     className="hover:text-slate-100 transi hover:bg-violet-600 cursor-pointer rounded-s-3xl rounded-t-3xl bg-slate-50 p-3">
-                       Management
+                       Affiliate Marketing
                        </p>
-                       <p onClick={()=>navigate(`/service/Investment`)} 
+                       <p onClick={()=>navigate(`/service/Graphic Designing`)} 
                     className="hover:text-slate-100 transi hover:bg-violet-600 cursor-pointer rounded-s-3xl rounded-t-3xl bg-slate-50 p-3">
-                       Investment
+                       Graphic Designing
                        </p>
-                       <p onClick={()=>navigate(`/service/Innovative`)} 
+                       <p onClick={()=>navigate(`/service/Investors`)} 
                     className="hover:text-slate-100 transi hover:bg-violet-600 cursor-pointer rounded-s-3xl rounded-t-3xl bg-slate-50 p-3">
-                       Innovative
+                       Investors
                        </p>
                    
                 </div>
                 <div className='bg-slate-100 shadow rounded-s-3xl rounded-t-3xl p-4 mx-auto'>
-                <p className='text-xl text-center fw-semibold my-2'>Popular Post</p>
+                <p className='text-xl text-center fw-semibold my-2'>Popular Services</p>
                 <hr />
-                <div id='post1' className='cursor-pointer my-4 flex gap-2'>
-                    <img className='w-25 h-16 bg-center ' src={require("../assest/news-25.jpg")} alt="" />
-                    <div className='text-violet-700 text-lg w-[200px] mx-auto'> Business 
+                <div id='post1' onClick={()=>navigate("/service/Website Development")} className='cursor-pointer  align-items-center flex gap-2'>
+                    <img className='w-25 h-16 bg-center rounded' src={require("../assest/smlpic.jpeg")} alt="" />
+                    <div className='blclr text-lg w-[200px] mx-auto'> Software consulting 
                     <p className='text-slate-950 transi text-lg hover:text-violet-600'>
-                        Here are some tips Giving back interested in this year?</p></div>
+                        Here are some tips for Website Development</p></div>
                 </div>
-                <div id='post2' className='cursor-pointer flex gap-2'>
-                    <img className='w-25 h-16 bg-center ' src={require("../assest/news-25.jpg")} alt="" />
-                    <div className='text-violet-700 text-lg w-[200px] mx-auto'> Business 
+                <div id='post2' onClick={()=>navigate("/service/Content Creation")} className='cursor-pointer align-items-center flex gap-2'>
+                    <img className='w-25 h-16 bg-center rounded' src={require("../assest/smlpic2.jpeg")} alt="" />
+                    <div className='blclr text-lg w-[200px] mx-auto'> Branding 
                     <p className='text-slate-950 transi text-lg hover:text-violet-600'>
-                        Here are some tips Giving back interested in this year?</p></div>
+                        Look here for a Content Creation tips.</p></div>
                 </div>
-                <div id='post3' className='cursor-pointer flex gap-2'>
-                    <img className='w-25 h-16 bg-center ' src={require("../assest/news-25.jpg")} alt="" />
-                    <div className='text-violet-700 text-lg w-[200px] mx-auto'> Business 
+                <div id='post3' onClick={()=>navigate("/service/Startups")} className='cursor-pointer flex align-items-center gap-2'>
+                    <img className='w-25 h-16 bg-center rounded ' src={require("../assest/smlpic3.png")} alt="" />
+                    <div className='blclr text-lg w-[200px] mx-auto'> Business 
                     <p className='text-slate-950 transi text-lg hover:text-violet-600'>
-                        Here are some tips Giving back interested in this year?</p></div>
+                        Confused where to start your Business?</p></div>
                 </div>
                     
                 </div>

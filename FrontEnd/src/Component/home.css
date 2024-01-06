@@ -15,29 +15,32 @@
 #crsimg{
     min-height: 600px;
     /* background-size: contain; */
-    background-position: end;
-    background-image: url(../assest/banner-1.jpg);
+    background-image: url(../assest/Software\ Development\ Landin.jpg);
     background-color: rgba(0,0,0,.7);
     background-size: cover;
+    background-position: top right;
 }
 #crsimg2{
     min-height: 600px;
-
     /* background-size: contain; */
-    background-image: url(../assest/banner-2.jpg);
-    background-position: end;
+    background-image: url(../assest/Branding\ Landing\ \(1\).jpg);
     background-size: cover;
+    background-position: top right;
+
 }
 #crsimg3{
     min-height: 600px;
     /* background-size: contain; */
-    background-image: url(../assest/banner-3.jpg);
+    background-image: url(../assest/Digital\ Marketing\ \(1\).jpg);
     background-size: cover;
+    background-position: center;
 }
-@media (min-width:1040px) {
-    #crsimg ,#crsimg2,#crsimg3{
-        height: 90vh;
-    }
+#crsimg4{
+    min-height: 600px;
+    /* background-size: contain; */
+    background-image: url(../assest/Business\ Consulting\ Landing\ \(1\).jpg);
+    background-size: cover;
+    background-position: center right;
 }
 .indsbg{
     background-image: url(../assest/industries-bg.jpg);
@@ -55,6 +58,9 @@
     background-size: cover;
     background-position: center;
 
+}
+.blclr{
+    color: rgb(10,102,217);
 }
 .icon-three{
     border-radius: 50px 50px 0px 50px;

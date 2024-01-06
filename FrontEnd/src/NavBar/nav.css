@@ -21,6 +21,7 @@
 }
 .btn-change{
     transition: .7s ;
+    background-color: rgb(10,102,217);
 }
 .btn-change:hover{
     transition: .9s ease-in-out;

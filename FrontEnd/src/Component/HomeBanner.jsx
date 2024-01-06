@@ -11,18 +11,19 @@ const HomeBanner = () => {
        id="crsimg">
         <Carousel.Caption>
         <div className='md:w-3/5 lg:w-1/2  text-white'>
-                <h1 className='text-3xl md:text-6xl text-start fontfam xl:text-7xl fw-bolder'>Powering <span className=' block'> growth through </span> Technology </h1>
+                <h1 className='text-3xl md:text-6xl text-start  fontfam xl:text-7xl fw-bolder'>
+                  Powering <span className=' block'> growth through </span> Technology </h1>
                 <div className='flex'>
-                <div id='three-rounded' className='w-max d-none d-xl-block h-max p-3 bg-pink-500'>
-                          <img className='w-20 h-8' src={require('../assest/chat (1).png')} alt="" />
+                <div id='three-rounded' style={{backgroundColor:"rgb(129,144,187)"}} className='w-max d-none d-xl-block h-max p-3 bg-pink-500'>
+                          <img className='w-8 h-8' src={require('../assest/chat (1).png')} alt="" />
                     </div>
-                    <p className='text-lg ms-3 mulish md:text-xl text-start'>
+                    <p className='text-lg ms-3 xl:w-3/5 mulish md:text-xl text-start'>
                     Leveraging innovative solutions to drive business forward, promoting efficiency,
     scalability, and sustained growth.</p>
                 </div>
                 <button id='three-rounded' onClick={()=>navigate("/service")}
-                 className='fs-5 float-right mulish btn-change d-none d-md-block fw-semibold h-14 w-44 bg-violet-700'>
-      Service & plans
+                 className='fs-5 mulish btn-change d-none d-md-block fw-semibold h-14 w-44 bg-violet-700'>
+      Reach Us
        </button>
         </div></Carousel.Caption>
       </Carousel.Item>
@@ -33,17 +34,17 @@ const HomeBanner = () => {
       className='background' alt="" /> */}
         <Carousel.Caption className=''> 
         <div className='md:w-3/5 lg:w-1/2 text-black'>
-                <h1 className='text-2xl text-start fontfam md:text-6xl xl:text-7xl fw-bold'>Transforming  <span className=''>brands one pixel </span> at a time  </h1>
+                <h1 className='text-2xl text-start fontfam md:text-6xl w-11/12 xl:text-7xl fw-bold'>Transforming brands  <span className=''>one pixel </span> at a time  </h1>
                 <div className='flex'>
-                <div id='three-rounded' className='w-max d-none d-xl-block h-max p-3 bg-pink-500'>
-                          <img className='w-16 h-8' src={require('../assest/chat (1).png')} alt="" />
+                <div style={{backgroundColor:"rgb(223,143,4)"}} id='three-rounded' className='w-max d-none d-xl-block h-max p-3 bg-pink-500'>
+                          <img className='w-8 h-8' src={require('../assest/chat (1).png')} alt="" />
                     </div>
-                <p className='text-lg mulish ms-3 text-start inline md:text-xl'>
+                <p className='text-lg mulish ms-3 xl:w-3/5 text-start inline md:text-xl'>
                   Crafting visually stunning and impactful brand transformation by refining every details.
                 </p>
                 </div>
-                <button id='three-rounded' className='fs-5 mulish text-white float-right btn-change d-none d-md-block fw-semibold h-14 w-44 bg-violet-700'>
-      Service & plans
+                <button id='three-rounded' className='fs-5 mulish text-white btn-change d-none d-md-block fw-semibold h-14 w-44 bg-violet-700'>
+      Reach Us
        </button>
         </div>
         </Carousel.Caption>
@@ -56,41 +57,43 @@ const HomeBanner = () => {
         
         <Carousel.Caption className=''> 
         <div className=' md:w-3/5 lg:w-1/2 text-white'>
-                <h1 className='text-2xl fontfam md:text-6xl xl:text-7xl text-start fw-bolder'>Ignite your <span className='stroke-transparent block'> business with </span>our expertise </h1>
+                <h1 className='text-2xl fontfam md:text-6xl xl:text-7xl text-start fw-bolder'>
+                  Ignite your <span className='stroke-transparent block'> business with </span>our expertise </h1>
                 <div className='flex'>
-                <div id='three-rounded' className='w-max d-none d-xl-block h-max p-3 bg-pink-500'>
-                          <img className='w-16 h-8' src={require('../assest/chat (1).png')} alt="" />
+                <div id='three-rounded' style={{backgroundColor:"rgb(194,9,26)"}} className='w-max d-none d-xl-block h-max p-3 bg-pink-500'>
+                          <img className='w-8 h-8' src={require('../assest/chat (1).png')} alt="" />
                     </div>
-                    <p className='text-lg ms-3 mulish md:text-xl text-start'>Our expertise will navigate you towards success in the ever-evolving accordion 
+                    <p className='text-lg ms-3 mulish md:text-xl xl:w-3/5 text-start'>Our expertise will navigate you towards success in the ever-evolving 
                 digital landscape. </p>
                 </div>
 
              
-                <button id='three-rounded' className='px-4 float-right btn-change mulish d-none d-md-block fw-semibold h-14 w-44 bg-violet-700'>
-      Service & plans
+                <button id='three-rounded' className='px-4  btn-change mulish d-none d-md-block fw-semibold h-14 w-44 bg-violet-700'>
+      Reach Us
        </button>
         </div>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item interval={900}
-       id="crsimg2"
+       id="crsimg4"
        className=''>
       {/* <img src={require(`../assest/banner-2.jpg`)}
       id="crsimg"
       className='background' alt="" /> */}
         <Carousel.Caption className=''> 
-        <div className='md:w-3/5 lg:w-1/2 text-black'>
-                <h1 className='text-3xl text-start fontfam md:text-5xl xl:text-7xl fw-bold'>Driving growth through data-driven strategies </h1>
+        <div className='md:w-3/5 lg:w-1/2 text-white'>
+                <h1 className='text-3xl text-start fontfam md:text-5xl xl:text-6xl fw-bold'>
+                  Driving growth through <span className='block'> data-driven strategies</span>  </h1>
                 <div className='flex'>
-                <div id='three-rounded' className='w-max d-none d-xl-block h-max p-3 bg-pink-500'>
-                          <img className='w-20 h-8' src={require('../assest/chat (1).png')} alt="" />
+                <div id='three-rounded' style={{backgroundColor:"rgb(243,52,62)"}} className='w-max d-none d-xl-block h-max p-3 bg-pink-500'>
+                          <img className='w-8 h-8' src={require('../assest/chat (1).png')} alt="" />
                     </div>
-                    <p className='text-lg ms-3 mulish md:text-xl text-start'>
+                    <p className='text-lg ms-3 xl:w-3/5 mulish md:text-xl text-start'>
                     Our data-driven strategies fuel business towards robust growth by hamessing the power of
                   actionable insights. </p>
                 </div>
-                <button id='three-rounded' className='fs-5 mulish text-white float-right btn-change d-none d-md-block fw-semibold h-14 w-44 bg-violet-700'>
-      Service & plans
+                <button id='three-rounded' className='fs-5 mulish text-white btn-change d-none d-md-block fw-semibold h-14 w-44 bg-violet-700'>
+      Reach Us
        </button>
         </div>
         </Carousel.Caption>
@@ -100,11 +103,11 @@ const HomeBanner = () => {
 <h1 className='h-10'></h1>
     {/* Adout us */}
     <div id='experiencepage' className='my-3 container d-flex flex-col flex-lg-row'>
-    <div id='experience' className='lg:w-1/2 mx-auto my-2'>
+    <div id='experience' className='lg:w-1/2 rounded-full mx-auto my-2'>
                     <Image src={require(`../assest/about-1.jpg`)}></Image>
                  </div>
          <div id='aboutus' className='lg:w-1/2 fontfam'>
-            <p className='fs-5 text-violet-700 fw-semibold'>About us</p>
+            <p className='fs-5 blclr fw-semibold'>About us</p>
              <p className='fw-semibold w-4/5 text-xl lg:text-5xl fontfam line display-5 '>
              Your roadmap to business success.
              </p>

@@ -49,13 +49,14 @@ const ContactLanding = () => {
             <Col lg={3} className='mt-2'>
               <p className='text-2xl fw-semibold'>Office Location</p>
               <hr />
-              <p className='text-lg md:w-4/5 fw-semibold'>
+              {/* <p className='text-lg md:w-4/5 fw-semibold'>
               Over 30 Offices in more
 than 16 Countries
-              </p>
+              </p> */}
               <p className='text-lg fw-semibold'>Head Office</p>
               <p className=' mulish md:w-4/5 text-slate-500'>
-       <span className='text-black text-base fw-semibold mulish'>   Merida Tech Minds {cp}</span>  <span className='block'> 20-2 ,Keshava Krupa Building 2nd Floor, 30th cross, 10th Main Rd, 4th Block, Jayanagar, Bengaluru, Karnataka 560011
+       <span className='text-black text-base fw-semibold mulish'>   Merida Tech Minds {cp}</span>  <span className='block'>
+         20-2 ,Keshava Krupa Building 2nd Floor, 30th cross, 10th Main Rd, 4th Block, Jayanagar, Bengaluru, Karnataka 560011
            </span>  </p>
               <Link target='_block' to='https://g.co/kgs/vgDdWeC' className='text-decoration-none flex gap-2 text-lg fw-semibold text-slate-900 transi hover:text-violet-600'>
                 <img width={30} src={require('../assest/map.png')} alt="" />

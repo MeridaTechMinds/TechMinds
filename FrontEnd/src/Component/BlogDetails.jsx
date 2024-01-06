@@ -20,7 +20,7 @@ const BlogDetails = () => {
         const element = document.querySelector('.durationani');
         element.style.setProperty('--animate-duration','4s');
         const fetch =()=>{
-            axios.get(`http://192.168.0.124:9000/api/data/${id}`)
+            axios.get(`http://65.1.24.6:8000/api/data/${id}`)
         .then((response)=>{
             setblog(response.data);
             setboolean(true);
@@ -44,35 +44,60 @@ const BlogDetails = () => {
       let month=""+(months.slice(Number(date.slice(5,7)),Number(date.slice(5,7))+1))
       console.log(Number(date.slice(5,7))+1);
       let dte=date.slice(8,10)
+      let [name,setname]=useState("")
+      let [email,setemail]=useState("")
+      let [comment,setcomment]=useState("")
+      let coment=()=>{
+        let obj={name,email,comment}
+        axios.post(`http://65.1.24.6:8000/api/comments`,obj)
+        .then(()=>{
+            // alert("comment has been added")
+        })
+        .catch((err)=>{
+            console.log(err);
+        })
+      }
   return (
     <div className={`${anime} animate__animated transi durationani`}>
       <MiniNav/>
         <LogoNav/>
         <MainNav/>
-          <TitleBanner data={blog.Main_Title}/>
+          <TitleBanner data={blog.slug}/>
+         
         <h2 className='h-20'></h2>
         <Row className='container justify-around mx-auto mb-20'>
             <Col lg={7}>
             <p className='rounded-s-3xl rounded-t-3xl bg-slate-100 text-clr w-fit p-2 capitalize'>
                 <img className='inline mx-3' src={require("../assest/e7b9b29c4fdd4d4ec28699064fe80204.png")} alt="" /> 
-            {blog.Category}</p>
+                {blog.Category} </p>
+            
             <p className='fontfam text-[18px] fw-bolder'>On <span className='text-slate-600'>
              {month} {dte}, {year}</span>
             </p>
-         <div className='flex align-items-center'>   
-         <p className='h-fit w-fit p-2 px-4 text-3xl flex  justify-content-center align-items-center
-          bg-slate-900 text-white rounded-s-3xl rounded-t-3xl m-3'>
-            {boolean && blog.Main_Title[0]}</p>
-            <p className='text-slate-600'>
-                {po1}
+            <p className='text-3xl fontfam fw-bolder'>
+            {blog.Main_Title}
             </p>
+         <div className='flex align-items-center'>   
+         {/* <p className='h-fit w-fit p-2 px-4 text-3xl flex  justify-content-center align-items-center
+          bg-slate-900 text-white rounded-s-3xl rounded-t-3xl m-3'>
+            {boolean && blog.Main_Title[0]}</p> */}
+            <p className='text-slate-600'>
+            {po1}
+            </p>
+           
         </div>
             <p className='text-slate-600'>{po2}
             </p>
-            <Image src={blog.img} alt="" />
+            <img className='rounded-3xl' src={blog.img} alt="" />
+            
             <p className='text-xl md:text-4xl fontfam fw-bolder my-10'>{blog.Sub_Title} </p>
-            <p className='text-slate-600 mulish'>{blog.Paragraph2} </p>
-            <p className='text-black fontfam fw-bolder text-xl '>{blog.Heading}</p>
+            <p className='text-slate-600 mulish'>{blog.Paragraph2} 
+            </p>
+            
+            <p className='text-black fontfam fw-bolder text-xl '>
+               {blog.Points_Heading}
+            </p>
+            
             <div className='flex flex-wrap'>
                 {
                      poiints.map((data,index)=>{
@@ -89,10 +114,11 @@ const BlogDetails = () => {
             </div>
             {/* highlights */}
             <div className='p-4 rounded-t-3xl flex rounded-s-3xl bg-slate-800'>
-                <img className='w-16 mx-auto my-auto h-16' src={require("../assest/quote (1).png")} alt="" />
+                <img className='w-16 h-16' src={require("../assest/quote (1).png")} alt="" />
                 <div className='p-4 text-white text-xl'>
-                      <p className='fontfam fw-bold'>{blog.Highlight}
-                      </p>
+                      <p className='fontfam fw-bold'>
+                      {blog.Highlight}</p>
+                      
                 </div>
             </div>
             <button onClick={()=>{
@@ -104,16 +130,17 @@ const BlogDetails = () => {
                 <form action="" className=''>
                     <p className='text-2xl md:text-4xl'>Leave A Comment</p>
                     <div className='flex felx-col flex-lg-row'>
-                    <input required  type="text" className='p-3 w-full text-slate-500 rounded-s-2xl rounded-tr-2xl text-lg m-2 focus:outline-violet-600 ' placeholder='Name ' />
-                    <input required  type="email" className='p-3 w-full text-slate-500 rounded-s-2xl rounded-tr-2xl text-lg m-2 focus:outline-violet-600 ' placeholder='Email' />
+                    <input required  type="text" value={name} onChange={(e)=>setname(e.target.value)} className='p-3 w-full text-slate-500 rounded-s-2xl rounded-tr-2xl text-lg m-2 focus:outline-violet-600 ' placeholder='Name ' />
+                    <input required  type="email" value={email} onChange={(e)=>setemail(e.target.value)} className='p-3 w-full text-slate-500 rounded-s-2xl rounded-tr-2xl text-lg m-2 focus:outline-violet-600 ' placeholder='Email' />
 
                     </div>
-                    <textarea name="Message" placeholder='Message'
+                    <textarea value={comment} onChange={(e)=>setcomment(e.target.value)} name="Message" placeholder='Message'
                         className='p-3  text-slate-500 w-full  rounded-s-2xl rounded-tr-2xl text-lg m-2 focus:outline-violet-600 '
                          id="" cols="20" rows="5">
 
                         </textarea>
-                        <button id='three-rounded' className='px-4 text-slate-50 hover:bg-pink-600 transi fw-semibold p-3 bg-violet-600'>
+                        <button onClick={()=>coment()} id='three-rounded'
+                         className='px-4 text-slate-50 hover:bg-pink-600 transi fw-semibold p-3 bg-violet-600'>
             Post Comment
        </button>
         </form>

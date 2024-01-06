@@ -7,6 +7,13 @@ const MainNav = () => {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+  const [aboutboolean,setaboutboolean]=useState(false);
+  const [serviceboolean,setserviceboolean]=useState(false);
+  const [SCboolean,setSCboolean]=useState(false);
+  const [DMboolean,setDMboolean]=useState(false);
+  const [Bboolean,setBboolean]=useState(false);
+  const [BCboolean,setBCboolean]=useState(false);
+
 
   const [navshow,setnav]=useState(false);
   let navigate =useNavigate()
@@ -26,26 +33,33 @@ const MainNav = () => {
               placement="end"
               className="trans"
             >
-              <Offcanvas.Header closeButton>
-                <Offcanvas.Title id={`offcanvasNavbarLabel-expand-lg`}>
-                <div className='mx-auto mt-3 mx-sm-0'>
-                <img width={150} src={require("../assest/merida website logo white.png")} alt="logo" />
+              <Offcanvas.Header >
+                <Offcanvas.Title id={`offcanvasNavbarLabel-expand-lg`}
+                className='flex w-full justify-between align-items-center'>
+                <div className='mt-3 mx-sm-0'>
+                <img onClick={()=>{navigate("/");setnav(false)}} width={150} src={require("../assest/merida website logo white.png")} alt="logo" />
              </div>
+                <img className='w-[20px] h-[18px]' onClick={()=>setnav(false)} src={require("../assest/close.png")} alt="" />
                 </Offcanvas.Title>
               </Offcanvas.Header>
               <Offcanvas.Body className='d-flex flex-column justify-between'>
                 <div>
                 <Nav className="px-5 fw-semibold justify-content-start justify-content-between  flex-grow-1 pe-3">
                   <Nav.Link onClick={()=>{navigate("/");setnav(false) }} className='fontfam text-lg'><button className='fontfam text-lg'>Home</button></Nav.Link>
-                  <Nav.Link><div className="drpdown ">
-                  <button className="drpbtn fontfam text-lg">About 
+                  <Nav.Link><div onMouseLeave={()=>setaboutboolean(false)} className="drpdown">
+                  <button onClick={()=>setaboutboolean(!aboutboolean)}
+                  onMouseEnter={()=>setaboutboolean(true)} 
+                  
+                  className="drpbtn fontfam text-lg">About 
                 
                   <svg width="20" height="25" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor"
                    class=" inline ms-2 d-lg-none">
   <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
 </svg>
  </button>
-  <div className="drpdown-content xl:bg-slate-50 bg-red-200 text-slate-50 transi">
+  <div style={{
+    display : aboutboolean ? "block" : "none"
+  }} className="drpdown-content xl:bg-slate-50 bg-red-200 text-slate-50 transi">
     <Link to={"/about"} onClick={()=>{navigate("/about");setnav(false) }}
      className='text-decoration-none fs-6 fontfam text-lg w-full hover:scale-105  hover:text-violet-600'>
       About Company</Link>
@@ -56,18 +70,28 @@ const MainNav = () => {
 </div>
 </Nav.Link>
 {/* service start */}
-<Nav.Link><div className="drpdown ">
-   <button className="drpbtn fontfam text-lg">Service 
+<Nav.Link>
+  <div onMouseLeave={()=>setserviceboolean(false)} className="drpdown ">
+   <button onClick={()=>setserviceboolean(!serviceboolean)}
+                  onMouseEnter={()=>setserviceboolean(true)} 
+                  
+    className="drpbtn fontfam text-lg">Services 
    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="25" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" 
    class=" d-lg-none ms-2 inline">
   <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
 </svg></button>
-  <div className="drpdown-content2">
-    <Nav.Link onClick={()=>{navigate("/service");setnav(false) }} 
-    className='text-decoration-none text-slate-600'>Service </Nav.Link>
-    <Nav.Link 
+  <div style={{
+    display : serviceboolean ? "block" : "none"
+  }} 
+  className="drpdown-content2">
+    {/* <Nav.Link onClick={()=>{navigate("/service");setnav(false) }} 
+    className='text-decoration-none text-slate-600'>Service </Nav.Link> */}
+    <Nav.Link onMouseLeave={()=>setSCboolean(false)}
     className='text-decoration-none h-fit drpdown3 text-slate-600' >
-      <button className='drpbtn fontfam text-lg d-block fs-6 text-start w-max'> Traditional Cosulting
+      <button  onClick={()=>setSCboolean(!SCboolean)}
+                  onMouseEnter={()=>setSCboolean(true)} 
+                  
+      className='drpbtn fontfam text-lg d-block fs-6 text-start w-max'> Software Consulting
        <svg xmlns="http://www.w3.org/2000/svg" fill="none" width="15" height="25" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="ms-2 d-none d-lg-inline">
   <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
 </svg> 
@@ -75,63 +99,131 @@ const MainNav = () => {
    class=" d-lg-none ms-2 inline">
   <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
 </svg></button> 
-       <div className='drpdown-content3 bg-transparent left-44 inline top-0'>
-           <div className='lg:ms-10 lg:bg-slate-50 lg:rounded-s-3xl lg:rounded-t-3xl lg:w-[100%]'>
+       <div style={{
+    display : SCboolean ? "block" : "none"
+  }}
+        className='drpdown-content3 bg-transparent left-44 inline top-0'>
+           <div className='lg:ms-10 lg:bg-slate-50 lg:rounded-s-3xl lg:rounded-t-3xl lg:w-[300px] '>
            <Nav.Link 
-           onClick={()=>{navigate("/service/Traditional Consulting");setnav(false) }} >
-            Transfo</Nav.Link>
+           onClick={()=>{navigate("/service/Custom Software Development");setnav(false);setserviceboolean(false) }} >
+            Custom Software Development</Nav.Link>
             <Nav.Link 
-           onClick={()=>{navigate("/service/Traditional Consulting");setnav(false) }} >
-             ready</Nav.Link>
+           onClick={()=>{navigate("/service/Mobile App Development");setnav(false);setserviceboolean(false) }} >
+             Mobile App Development</Nav.Link>
             <Nav.Link 
-           onClick={()=>{navigate("/service/Traditional Consulting");setnav(false) }} >
-            Transformers are ready</Nav.Link>
+           onClick={()=>{navigate("/service/Website Development");setnav(false);setserviceboolean(false) }} >
+            Website Development</Nav.Link>
+            <Nav.Link 
+           onClick={()=>{navigate("/service/E-Commerce Development");setnav(false);setserviceboolean(false) }} >
+            E-Commerce Development</Nav.Link>
            </div>
        </div>
       </Nav.Link>
-      <Nav.Link 
+      <Nav.Link onClick={()=>setDMboolean(!DMboolean)}
+      onMouseEnter={()=>setDMboolean(true)} onMouseLeave={()=>setDMboolean(false)}
     className='text-decoration-none h-fit fontfam text-lg drpdown3 text-slate-600' >
-      <button className='drpbtn  d-block text-start w-max'> Traditional Cosulting
+      <button 
+      className='drpbtn  d-block text-start w-max'> Digital Marketing
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" width="15" height="25" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="ms-2 d-none d-lg-inline">
   <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
 </svg> <svg xmlns="http://www.w3.org/2000/svg" width="20" height="25" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" 
    class="ms-2 d-lg-none inline ">
   <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
 </svg> </button> 
-       <div className='drpdown-content3 bg-transparent left-44 inline top-0'>
-           <div className='lg:ms-10 lg:bg-slate-50 lg:rounded-s-3xl lg:rounded-t-3xl lg:w-[100%]'>
+       <div style={{
+    display : DMboolean ? "block" : "none"
+  }} 
+       className='drpdown-content3 bg-transparent  left-44 inline top-0'>
+           <div className='lg:ms-10 lg:bg-slate-50 lg:rounded-s-3xl lg:rounded-t-3xl lg:w-[270px]'>
            <Nav.Link 
-           onClick={()=>{navigate("/service/Traditional Consulting");setnav(false) }} >
-            Transfo</Nav.Link>
+           onClick={()=>{navigate("/service/Search Engine Optimization");setnav(false);setserviceboolean(false) }} >
+            Search Engine Optimization</Nav.Link>
             <Nav.Link 
-           onClick={()=>{navigate("/service/Traditional Consulting");setnav(false) }} >
-             ready</Nav.Link>
+           onClick={()=>{navigate("/service/Search Engine Marketing");setnav(false);setserviceboolean(false) }} >
+             Search Engine Marketing</Nav.Link>
             <Nav.Link 
-           onClick={()=>{navigate("/service/Traditional Consulting");setnav(false) }} >
-            Transformers are ready</Nav.Link>
+           onClick={()=>{navigate("/service/Social Media Marketing");setnav(false);setserviceboolean(false) }} >
+            Social Media Marketing</Nav.Link>
+            <Nav.Link 
+           onClick={()=>{navigate("/service/Lead Generation");setnav(false);setserviceboolean(false) }} >
+            Lead Generation</Nav.Link>
+            <Nav.Link 
+           onClick={()=>{navigate("/service/Email Marketing");setnav(false);setserviceboolean(false) }} >
+            Email Marketing</Nav.Link>
+            <Nav.Link 
+           onClick={()=>{navigate("/service/Affiliate Marketing");setnav(false);setserviceboolean(false) }} >
+            Affiliate Marketing</Nav.Link>
+            <Nav.Link 
+           onClick={()=>{navigate("/service/Content Marketing");setnav(false);setserviceboolean(false) }} >
+            Content Marketing</Nav.Link>
+            <Nav.Link 
+           onClick={()=>{navigate("/service/Influencer Marketing");setnav(false);setserviceboolean(false) }} >
+            Influencer Marketing</Nav.Link>
            </div>
        </div>
       </Nav.Link>
-      <Nav.Link 
+      <Nav.Link onClick={()=>setBboolean(!Bboolean)}
+      onMouseEnter={()=>setBboolean(true)} 
+      onMouseLeave={()=>setBboolean(false)}
     className='text-decoration-none fontfam text-lg h-fit drpdown3 text-slate-600' >
-      <button className='drpbtn  d-block text-start w-max'> Traditional Cosulting
+      <button className='drpbtn  d-block text-start w-max'> Branding
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" width="15" height="25" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="d-none ms-2 d-lg-inline">
   <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
 </svg> <svg xmlns="http://www.w3.org/2000/svg" width="20" height="25" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" 
    class="ms-2 d-lg-none inline">
   <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
 </svg> </button> 
-       <div className='drpdown-content3 bg-transparent left-44 inline top-0'>
+       <div style={{
+    display : Bboolean ? "block" : "none"
+  }} 
+        className='drpdown-content3 bg-transparent left-44 inline top-0'>
+           <div className='lg:ms-10 lg:bg-slate-50 lg:rounded-s-3xl lg:rounded-t-3xl lg:w-[250px]'>
+           <Nav.Link 
+           onClick={()=>{navigate("/service/Graphic Designing");setnav(false);setserviceboolean(false) }} >
+            Graphic Designing</Nav.Link>
+            <Nav.Link 
+           onClick={()=>{navigate("/service/UI & UX Designing");setnav(false);setserviceboolean(false) }} >
+             UI & UX Designing</Nav.Link>
+            <Nav.Link 
+           onClick={()=>{navigate("/service/Logo Designing");setnav(false);setserviceboolean(false) }} >
+            Logo Designing</Nav.Link>
+            <Nav.Link 
+           onClick={()=>{navigate("/service/Content Creation");setnav(false);setserviceboolean(false) }} >
+            Content Creation</Nav.Link>
+            <Nav.Link 
+           onClick={()=>{navigate("/service/Profile Maintenance");setnav(false);setserviceboolean(false) }} >
+            Profile Maintenance</Nav.Link>
+            <Nav.Link 
+           onClick={()=>{navigate("/service/Ad Shoot & Photography");setnav(false);setserviceboolean(false) }} >
+            Ad Shoot & Photography</Nav.Link>
+           </div>
+       </div>
+      </Nav.Link> 
+      <Nav.Link  onClick={()=>setBCboolean(!BCboolean)}
+      onMouseEnter={()=>setBCboolean(true)} 
+      onMouseLeave={()=>setBCboolean(false)}
+    className='text-decoration-none fontfam text-lg h-fit drpdown3 text-slate-600' >
+      <button className='drpbtn  d-block text-start w-max'> Business Consulting
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" width="15" height="25" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="d-none ms-2 d-lg-inline">
+  <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+</svg> <svg xmlns="http://www.w3.org/2000/svg" width="20" height="25" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" 
+   class="ms-2 d-lg-none inline">
+  <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+</svg> </button> 
+       <div style={{
+    display : BCboolean ? "block" : "none"
+  }} 
+       className='drpdown-content3 bg-transparent left-44 inline top-0'>
            <div className='lg:ms-10 lg:bg-slate-50 lg:rounded-s-3xl lg:rounded-t-3xl lg:w-[100%]'>
            <Nav.Link 
-           onClick={()=>{navigate("/service/Traditional Consulting");setnav(false) }} >
-            Transfo</Nav.Link>
+           onClick={()=>{navigate("/service/Startups");setnav(false);setserviceboolean(false) }} >
+            Startups</Nav.Link>
             <Nav.Link 
-           onClick={()=>{navigate("/service/Traditional Consulting");setnav(false) }} >
-             ready</Nav.Link>
+           onClick={()=>{navigate("/service/Sick Units Revival");setnav(false);setserviceboolean(false) }} >
+             Sick Units Revival</Nav.Link>
             <Nav.Link 
-           onClick={()=>{navigate("/service/Traditional Consulting");setnav(false) }} >
-            Transformers are ready</Nav.Link>
+           onClick={()=>{navigate("/service/Investors");setnav(false);setserviceboolean(false) }} >
+            Investors</Nav.Link>
            </div>
        </div>
       </Nav.Link> 
@@ -139,7 +231,8 @@ const MainNav = () => {
   </div>
 </div>
 </Nav.Link>
-                  <Nav.Link onClick={()=>{navigate("/project");setnav(false) }} className='position-relative fontfam text-lg'><button className='fontfam text-lg'>Projects</button> </Nav.Link>
+                  <Nav.Link onClick={()=>{navigate("/project");setnav(false) }} className='position-relative fontfam text-lg'><button className='fontfam text-lg'>Portfolio</button> </Nav.Link>
+                  <Nav.Link onClick={()=>{navigate("/testimonial");setnav(false) }} className='position-relative fontfam text-lg'><button className='fontfam text-lg'>Testimonial</button> </Nav.Link>
                   <Nav.Link onClick={()=>{navigate("/blogs");setnav(false) }} className='position-relative fontfam text-lg'><button className='fontfam text-lg'>Blog</button> </Nav.Link>
                   <Nav.Link onClick={()=>{navigate("/contact");setnav(false) }} className='position-relative fontfam text-lg'><button className='fontfam text-lg'>Contact</button> </Nav.Link>
                   
@@ -147,10 +240,11 @@ const MainNav = () => {
                 </div>
               <div className='d-lg-none ms-10'>
               <p className='fontfam text-2xl fw-bolder'>Contact Info</p>
+              <p className='fontfam text-lg fw-bolder'>Merida Tech Minds</p>
               <p className='mulish text-slate-600'>
-              <span>Chicago 12, Melbrone city ,USA</span>
-              <span className='cursor-pointer my-2 hover:text-violet-600 block'>+91 9791582480</span>
-              <span className='cursor-pointer hover:text-violet-600 block'>infp@example.com</span>
+              <span>20-2 ,Keshava Krupa Building 2nd Floor, 30th cross, 10th Main Rd, 4th Block, Jayanagar, Bengaluru, Karnataka 560011</span>
+              <span className='cursor-pointer my-2 hover:text-violet-600 block'>+91 8904599283</span>
+              <span className='cursor-pointer hover:text-violet-600 block'>info@meridatechminds.com</span>
             </p>
             <div className='flex gap-2'>
               <p className='rounded-full hover:text-violet-700 transi cursor-pointer p-2' >
@@ -178,16 +272,16 @@ const MainNav = () => {
 
             </div>
             <div className='d-flex lg:mx-10 '>
-            <Form className="d-flex shadow-none">
-                  <Form.Control
+            {/* <Form className="d-flex shadow-none">
+                  <input
                     type="search"
-                    placeholder="Search"
-                    className="me-2"
+                    placeholder='Search'
+                    className="me-2 outline-none focus:outline-violet-500 p-3 w-[250px] border rounded"
                     aria-label="Search"
                   />
-                </Form>
+                </Form> */}
                 <button className='mx-2 bg-inherit'  onClick={handleShow}>
-                <img src={require("../assest/navicon.png")} alt="Awesome Image"/>
+                <img className='w-6' src={require("../assest/merida logo.png")} alt="Awesome Image"/>
                  </button>
             </div>
           </Container>
@@ -208,10 +302,11 @@ const MainNav = () => {
           have chosen. Like, text, images, lists, etc.
           <div className=''>
             <p className='fontfam text-2xl fw-bolder'>Contact Info</p>
+            <p className='fontfam text-lg fw-bolder'>Merida Tech Minds</p>
             <p className='mulish text-slate-600'>
-              <span>Chicago 12, Melbrone city ,USA</span>
-              <span className='cursor-pointer my-2 hover:text-violet-600 block'>+91 9791582480</span>
-              <span className='cursor-pointer hover:text-violet-600 block'>infp@example.com</span>
+              <span>20-2 ,Keshava Krupa Building 2nd Floor, 30th cross, 10th Main Rd, 4th Block, Jayanagar, Bengaluru, Karnataka 560011</span>
+              <span className='cursor-pointer my-2 hover:text-violet-600 block'>+91 8904599283</span>
+              <span className='cursor-pointer hover:text-violet-600 block'>info@meridatechminds.com</span>
             </p>
             <div className='flex gap-2'>
               <p className='rounded-full hover:text-violet-700 transi cursor-pointer p-2' >

@@ -95,14 +95,14 @@ const Body1 = () => {
       };
   return (
     <div className=''>
-        <article className='container gap-7  d-flex flex-col flex-md-row mt-4'>
+        {/* <article className='container gap-7  d-flex flex-col flex-md-row mt-4'>
               <div id='card' className='violetclr one-rounded d-flex justify-content-around ps-5 pt-8 pe-2 lg:w-2/5 '>
                     <div id='three-rounded' className='w-max h-max p-3  bg-white'>
                           <img src={require('../assest/icon-5.png')} alt="" />
                     </div>
                     <content className="bg-imgarrow text-white m-2 ms-4  ps-5 pt-5 pe-5">
-                         <p className=' text-4xl fw-bold'>840 Billion</p>
-                         <p className='h6'>Client assets under advisement.</p>
+                         <p className=' text-4xl fw-bold fontfam'>500+</p>
+                         <p className='h6 mulish'>Clients served in a year.</p>
                     </content>
               </div>
               <div id='card' className='d-flex justify-content-around ms-5 gap-10 align-items-center'>
@@ -116,16 +116,16 @@ const Body1 = () => {
                          className='text-2xl lg:text-3xl fontfam cursor-pointer hover:text-violet-600 fw-bolder transi'>Start Your Project</p>
                          <p className='mulish fw-semibold text-slate-600'>The claims of duty obligationsbusiness frequently occur.</p>
                          <Link className='fw-semibold text-lg cursor-pointer hover:text-violet-600 text-decoration-none transi text-slate-900'>
-                          Free Consultation <svg className='text-violet-600' xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+                          Free Consultation <svg className='text-violet-600' xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi inline bi-arrow-right-short" viewBox="0 0 16 16">
   <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"/>
 </svg></Link>
                     </div>
               </div>
-        </article>
+        </article> */}
         {/* Our services */}
-        <Container className="text-center my-5">
-          <p className='text-clr fs-6 sans fw-semibold'>OUR SERVICES</p>
-                <p className='display-5 fontfam fw-bolder'>Phenomenal Consulting Solutions</p>
+        <Container className="text-center mt-0 mb-5">
+          <p className='blclr fs-6 sans fw-semibold'>OUR SERVICES</p>
+                <p className='display-5 fontfam fw-bolder'>Solutions We Offer</p>
         </Container>
 
 

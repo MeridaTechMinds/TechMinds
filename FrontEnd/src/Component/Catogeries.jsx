@@ -26,7 +26,7 @@ const Catogeries = () => {
     let [datas,setdatas]=useState([])
     let [show,setshow] =useState(false)
     useEffect(()=>{
-        axios.get(`http://192.168.0.124:9000/api/datas/${catogery}/`)
+        axios.get(`http://65.1.24.6:8000/api/datas/${catogery}/`)
         .then((response)=>{
             console.log(response.data);
             setdatas(response.data);

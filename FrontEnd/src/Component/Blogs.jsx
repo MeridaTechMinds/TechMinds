@@ -21,7 +21,7 @@ const Blogs = () => {
       let [boolean,setboolean]=useState(false)
       useEffect(()=>{
             const fetch=  ()=>{
-             axios.get("http://192.168.0.124:9000/api/blog/")
+             axios.get("http://65.1.24.6:8000/api/blog/")
              .then((response)=>{
                  console.log(response.data);
                  setblogs(response.data);
@@ -40,7 +40,7 @@ const Blogs = () => {
         <MiniNav/>
         <LogoNav/>
         <MainNav/>
-        <TitleBanner data={"Blogs"}/>
+        <TitleBanner data={"Blog"}/>
         {/* Grid View */}
         <h1 className='h-20'></h1>
          <Pagination data={webblogs}/> 

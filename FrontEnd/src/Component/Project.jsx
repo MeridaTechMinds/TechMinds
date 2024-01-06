@@ -82,7 +82,7 @@ const Project = () => {
         <MiniNav/>
         <LogoNav/>
         <MainNav/>
-        <TitleBanner data={"Projects"}/>
+        <TitleBanner data={"Portfolio"}/>
         <h1 className='h-20'></h1>
          <div className='container mulish fw-bolder text-lg flex flex-wrap justify-around mx-auto'>
             <p className='cursor-pointer mx-1 text-salte-900'>View All</p>

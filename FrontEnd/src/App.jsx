@@ -16,6 +16,7 @@ import Catogeries from './Component/Catogeries';
 import ServicesDivision from './Component/ServicesDivision';
 import TermsandPrivacy from './Component/TermsandPrivacy';
 import Adminpage from './Component/Adminpage';
+import Testimonial from './Component/Testimonial';
 const App = () => {
   return (
     <div>
@@ -29,12 +30,14 @@ const App = () => {
                <Route path='/contact/*' element={<Contact/>}/>
                <Route path='/about/*' element={<AboutsUS/>}/>
                <Route path='/blog/:id' element={<BlogDetails/>}/>
+               
                <Route path='/ourteam' element={<OurTeam/>}/> 
                <Route path='/project/:name' element={<ProjectDetails/>}/>
                <Route path='/catogery/:catogery' element={<Catogeries/>}/>
                <Route path='/service/:service' element={<ServicesDivision/>}/>
                <Route path='/terms&condition' element={<TermsandPrivacy/>}/>
                <Route path='/adminpage' element={<Adminpage/>}/>
+               <Route path='/testimonial' element={<Testimonial/>}/>
            </Routes>
       </BrowserRouter>
     </div>
